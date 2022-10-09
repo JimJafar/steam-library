@@ -11,6 +11,8 @@ services:
       && npm start"
     volumes:
       - ./server:/home/node/server
+    env_file:
+      - ./server/.env.prod
   client:
     container_name: "steam-library-client"
     image: "steam-library:0.1"
@@ -24,4 +26,4 @@ services:
     volumes:
       - ./client:/home/node/client
     env_file:
-      - .env.prod
+      - ./client/.env.prod
