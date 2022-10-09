@@ -18,11 +18,11 @@ services:
     image: "steam-library:0.1"
     working_dir: /home/node/client
     ports:
-      - "5042:5042"
+      - "5142:5142"
     command: >
       /bin/bash -c "npm install
       && npm run build
-      && serve -s build -l 5042"
+      && serve -s build -l 5142"
     volumes:
       - ./client:/home/node/client
     env_file:

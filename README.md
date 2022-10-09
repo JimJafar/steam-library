@@ -29,4 +29,4 @@ Run `docker build -t steam-library:0.1 .` to build your Docker image.
 
 Now you can start the app with `docker-compose up`.
 
-The server will be running on port `3042` and the UI will be on `5042`.
+The server will be running on port `3042` and the UI will be on `5142`.
