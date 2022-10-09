@@ -1,0 +1,25 @@
+{
+  "name": "steam-library",
+  "version": "0.1.0",
+  "description": "A quick and dirty app to list out your Steam library using the Valve API",
+  "main": "server/index.js",
+  "scripts": {
+    "start:dev:client": "cd client && npm install && npm start",
+    "start:dev:server": "cd server && npm install && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:client": "cd client && ./node_modules/eslint/bin/eslint.js -c .eslintrc.js --ext .ts --ext .tsx src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimJafar/steam-library.git"
+  },
+  "keywords": [
+    "steam"
+  ],
+  "author": "Jim Sangwine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimJafar/steam-library/issues"
+  },
+  "homepage": "https://github.com/JimJafar/steam-library#readme"
+}
