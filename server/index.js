@@ -12,7 +12,8 @@ if (!STEAM_ID || !STEAM_API_KEY || !CORS_ORIGIN) {
 }
 
 app.use(cors({
-  origin: CORS_ORIGIN
+  origin: CORS_ORIGIN,
+  optionsSuccessStatus: 200 // legacy browsers
 }));
 
 app.get('/library', async (req, res) => {
