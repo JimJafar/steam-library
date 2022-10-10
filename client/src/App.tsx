@@ -1,5 +1,5 @@
-import axios from 'axios'
 import React, { ChangeEvent, useEffect, useState } from 'react';
+import axios from 'axios'
 import GameTable from './components/GameTable';
 import './App.css'
 import Field from './types/Field';
