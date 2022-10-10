@@ -2,7 +2,7 @@
   "name": "steam-library",
   "version": "0.1.0",
   "description": "A quick and dirty app to list out your Steam library using the Valve API",
-  "main": "server/index.js",
+  "main": "server/index.ts",
   "scripts": {
     "start:dev:client": "cd client && npm install && npm start",
     "start:dev:server": "cd server && npm install && npm start",
