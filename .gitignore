@@ -1,0 +1,4 @@
+client/.env
+client/.env.prod
+server/.env
+server/.env.prod
