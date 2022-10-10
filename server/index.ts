@@ -1,11 +1,12 @@
-import { Request, Response } from 'express';
-import Game from './types/Game';
-import SteamGame from './types/SteamGame';
+import { Request, Response } from 'express'
+import Game from './types/Game'
+import SteamGame from './types/SteamGame'
+import express from 'express'
+import cors from 'cors'
+import axios from 'axios'
+import dotenv from 'dotenv'
 
-require('dotenv').config()
-const express = require('express')
-const axios = require("axios")
-const cors = require('cors')
+dotenv.config()
 
 const app = express()
 const port = 3042
@@ -34,5 +35,5 @@ app.get('/library', async (req: Request, res: Response) => {
 })
 
 app.listen(port, () => {
-  console.log(`Steam library server listening on port ${port}`)
+  console.log(`Steam library server listening on port ${port} and allowing connections from ${CORS_ORIGIN}`)
 })

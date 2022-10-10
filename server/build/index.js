@@ -1,20 +1,26 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-require('dotenv').config();
-const express = require('express');
-const axios = require("axios");
-const cors = require('cors');
-const app = express();
+const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
+const axios_1 = __importDefault(require("axios"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const app = (0, express_1.default)();
 const port = 3042;
 const { STEAM_ID, STEAM_API_KEY, CORS_ORIGIN } = process.env;
+console.log(process.env);
 if (!STEAM_ID || !STEAM_API_KEY || !CORS_ORIGIN) {
     throw Error('Please set up your .env files as described in the README.');
 }
-app.use(cors({
-    origin: CORS_ORIGIN
+app.use((0, cors_1.default)({
+    origin: CORS_ORIGIN,
+    optionsSuccessStatus: 200 // legacy browsers
 }));
 app.get('/library', async (req, res) => {
-    const response = await axios.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true`);
+    const response = await axios_1.default.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true`);
     res.send(response.data.response.games.map((game) => ({
         id: game.appid,
         name: game.name,
@@ -24,5 +30,5 @@ app.get('/library', async (req, res) => {
     })));
 });
 app.listen(port, () => {
-    console.log(`Steam library server listening on port ${port}`);
+    console.log(`Steam library server listening on port ${port} and allowing connections from ${CORS_ORIGIN}`);
 });
