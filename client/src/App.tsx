@@ -1,24 +1,15 @@
-import axios from "axios"
+import axios from 'axios'
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import GameTable from "./components/GameTable";
+import GameTable from './components/GameTable';
 import './App.css'
 import Field from './types/Field';
 import Game from './types/Game';
+import sortFactory from './utils/sortFactory';
 
 const App = () => {
   const [loading, setLoading] = useState(true)
   const [games, setGames] = useState([])
   const [filteredGames, setFilteredGames] = useState<Game[]>([])
-
-  const sortFactory = (field: Field, desc = false) => (a: Game, b: Game) => {
-    if (a[field] < b[field]) {
-      return desc ? 1 : -1
-    }
-    if (a[field] > b[field]) {
-      return desc ? -1 : 1
-    }
-    return 0
-  }
 
   const onSort = (field: Field) => {
     const compare = sortFactory(field, ['playtime', 'lastPlayed'].includes(field))
@@ -54,7 +45,7 @@ const App = () => {
       <>
         Showing {filteredGames.length} of {games.length} Steam games
         <p>
-          <input type="text" onChange={onSearchChange} placeholder='Search...' />
+          <input type='text' onChange={onSearchChange} placeholder='Search...' />
         </p>
         <GameTable games={filteredGames} onSort={onSort} />
       </>
