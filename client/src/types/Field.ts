@@ -3,7 +3,8 @@ enum Field {
   name = 'name',
   playtime = 'playtime',
   lastPlayed = 'lastPlayed',
-  score = 'score'
+  metacriticScore = 'metacriticScore',
+  steamScore = 'steamScore'
 }
 
 export default Field

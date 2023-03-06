@@ -3,7 +3,7 @@ import bodyParser from 'body-parser'
 import cheerio from 'cheerio'
 import express from 'express'
 import cors from 'cors'
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 import dotenv from 'dotenv'
 import fs from 'fs'
 import reviewScores from './review-scores.json'
@@ -57,12 +57,18 @@ app.post('/update-scores', async (req: Request, res: Response) => {
         const $ = cheerio.load(steamPage.data)
         const metacriticScore = $('#game_area_metascore > div.score').first()?.text()
         const metacriticLink = $('#game_area_metalink > a').first()?.attr("href")
+        const steamScoreParts = $('#review_histogram_rollup_section .game_review_summary')
+          .attr('data-tooltip-html')
+          ?.split(' user')[0]
+          ?.split('% of the ');
 
-        if (metacriticLink && metacriticScore) {
+        if (metacriticLink || steamScoreParts) {
           reviewScores.push({
             id: game.appid,
-            url: metacriticLink,
-            score: parseInt(metacriticScore)
+            metacriticUrl: metacriticLink || '',
+            metacriticScore: parseInt(metacriticScore),
+            steamScore: steamScoreParts ? parseInt(steamScoreParts[0], 10) : 0,
+            steamReviewCount: steamScoreParts ? parseInt(steamScoreParts[1].replace(',', ''), 10) : 0,
           })
         }
       } catch(e: any) {

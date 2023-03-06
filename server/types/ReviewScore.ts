@@ -1,7 +1,9 @@
 type ReviewScore = {
   id: number,
-  url: string,
-  score: number | null,
+  metacriticUrl: string | undefined,
+  metacriticScore: number | undefined,
+  steamScore: number | undefined,
+  steamReviewCount: number | undefined,
 }
 
 export default ReviewScore

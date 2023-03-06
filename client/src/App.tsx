@@ -13,7 +13,7 @@ const App = () => {
   const [filteredGames, setFilteredGames] = useState<Game[]>([])
 
   const onSort = (field: Field) => {
-    const compare = sortFactory(field, ['playtime', 'lastPlayed', 'score'].includes(field))
+    const compare = sortFactory(field, ['playtime', 'lastPlayed', 'metacriticScore', 'steamScore'].includes(field))
     setGames([...games].sort(compare))
     setFilteredGames([...filteredGames].sort(compare))
   }

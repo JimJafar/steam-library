@@ -17,18 +17,45 @@ const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
         <tr>
           <th>&nbsp;</th>
           <th onClick={() => onSort(Field.name)}>name</th>
-          <th onClick={() => onSort(Field.playtime)}>playtime</th>
-          <th onClick={() => onSort(Field.lastPlayed)}>played</th>
-          <th onClick={() => onSort(Field.score)}>score</th>
+          <th onClick={() => onSort(Field.playtime)} className="hide-on-mobile">playtime</th>
+          <th onClick={() => onSort(Field.lastPlayed)} className="hide-on-mobile">played</th>
+          <th onClick={() => onSort(Field.steamScore)}>Steam</th>
+          <th onClick={() => onSort(Field.metacriticScore)}>Metacritic</th>
         </tr>
         </thead>
         <tbody>
         {games.map((game) => <tr key={game.id}>
           <td>{ game.icon && <GameIcon game={game} /> }</td>
-          <td>{game.name}</td>
-          <td>{formatPlaytime(game)}</td>
-          <td className='nowrap'>{formatLastPlayed(game)}</td>
-          <td>{game.metacriticUrl ? <a href={game.metacriticUrl} target="_blank" rel="noreferrer">{game.score}</a> : '' }</td>
+          <td>
+            <a href={`https://store.steampowered.com/app/${game.id}`}
+               target="_blank"
+               rel="noreferrer">
+                 {game.name}
+            </a>
+          </td>
+          <td className="hide-on-mobile">{formatPlaytime(game)}</td>
+          <td className='hide-on-mobile nowrap'>{formatLastPlayed(game)}</td>
+          <td>
+            {game.steamScore
+              ? <div className='with-tooltip'>
+                {game.steamScore}%
+                  <span className='tooltip'>
+                    {`${game.steamReviewCount!.toLocaleString("en-GB")} reviews`}
+                  </span>
+                </div>
+              : ''
+            }
+          </td>
+          <td>
+            {game.metacriticUrl
+              ? <a href={game.metacriticUrl}
+                   target="_blank"
+                   rel="noreferrer">
+                    {game.metacriticScore}
+                </a>
+              : ''
+            
+          }</td>
         </tr>)}
         </tbody>
       </table>

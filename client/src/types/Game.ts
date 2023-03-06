@@ -4,8 +4,10 @@ type Game = {
   icon: string,
   playtime: number,
   lastPlayed: number,
-  metacriticUrl: string,
-  score: number
+  metacriticUrl: string | undefined,
+  metacriticScore: number | undefined,
+  steamScore: number | undefined,
+  steamReviewCount: number | undefined,
 }
 
 export default Game
