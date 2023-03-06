@@ -66,7 +66,7 @@ app.post('/update-scores', async (req: Request, res: Response) => {
           reviewScores.push({
             id: game.appid,
             metacriticUrl: metacriticLink || '',
-            metacriticScore: metacriticScore ? parseInt(metacriticScore) : 0,
+            metacriticScore: parseInt(metacriticScore) || 0,
             steamScore: steamScoreParts ? parseInt(steamScoreParts[0], 10) : 0,
             steamReviewCount: steamScoreParts ? parseInt(steamScoreParts[1].replace(',', ''), 10) : 0,
           })
