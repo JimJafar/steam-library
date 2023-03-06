@@ -1,5 +1,5 @@
 type SteamGame = {
-  appid: string,
+  appid: number,
   name: string,
   playtime_forever: number,
   img_icon_url: string,

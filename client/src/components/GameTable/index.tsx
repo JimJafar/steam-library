@@ -19,6 +19,7 @@ const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
           <th onClick={() => onSort(Field.name)}>name</th>
           <th onClick={() => onSort(Field.playtime)}>playtime</th>
           <th onClick={() => onSort(Field.lastPlayed)}>played</th>
+          <th onClick={() => onSort(Field.score)}>score</th>
         </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@ const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
           <td>{game.name}</td>
           <td>{formatPlaytime(game)}</td>
           <td className='nowrap'>{formatLastPlayed(game)}</td>
+          <td>{game.metacriticUrl ? <a href={game.metacriticUrl} target="_blank" rel="noreferrer">{game.score}</a> : '' }</td>
         </tr>)}
         </tbody>
       </table>

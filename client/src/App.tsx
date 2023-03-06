@@ -8,11 +8,12 @@ import sortFactory from './utils/sortFactory';
 
 const App = () => {
   const [loading, setLoading] = useState(true)
+  const [updatingScores, setUpdatingScores] = useState(false)
   const [games, setGames] = useState([])
   const [filteredGames, setFilteredGames] = useState<Game[]>([])
 
   const onSort = (field: Field) => {
-    const compare = sortFactory(field, ['playtime', 'lastPlayed'].includes(field))
+    const compare = sortFactory(field, ['playtime', 'lastPlayed', 'score'].includes(field))
     setGames([...games].sort(compare))
     setFilteredGames([...filteredGames].sort(compare))
   }
@@ -35,6 +36,15 @@ const App = () => {
     setLoading(false)
   }
 
+  const updateScores = async (forceAll: boolean = false) => {
+    setUpdatingScores(true)
+    const updateScoresResponse = await axios.post(`${process.env.REACT_APP_API_URL}/update-scores`, { forceAll })
+    if (updateScoresResponse.status === 200) {
+      setFilteredGames([...updateScoresResponse.data])
+      setUpdatingScores(false)
+    }
+  }
+
   useEffect(() => {
     fetchGames()
   }, [])
@@ -46,6 +56,9 @@ const App = () => {
         Showing {filteredGames.length} of {games.length} Steam games
         <p>
           <input type='text' onChange={onSearchChange} placeholder='Search...' />
+          <button type='button' onClick={() => updateScores()} disabled={updatingScores}>Update missing scores</button>
+          <button type='button' onClick={() => updateScores(true)} disabled={updatingScores}>Update ALL scores</button>
+          {updatingScores && 'Updating scores...'}
         </p>
         <GameTable games={filteredGames} onSort={onSort} />
       </>
