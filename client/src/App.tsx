@@ -31,9 +31,9 @@ const App = () => {
     if (!libraryResponse) {
       throw Error('Library not found')
     }
-    setGames(libraryResponse.data)
-    setFilteredGames([...libraryResponse.data])
-    onSort(Field.steamScore)
+    const sortedGames = libraryResponse.data.sort(sortFactory(Field.steamScore, true))
+    setGames(sortedGames)
+    setFilteredGames([...sortedGames])
     setLoading(false)
   }
 
