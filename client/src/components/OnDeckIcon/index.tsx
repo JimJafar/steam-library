@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
+import SteamDeckSupportLevel from '../../types/SteamDeckSupportLevel'
 
 type OnDeckIconProps = {
-  supportLevel: 'Verified' | 'Playable' | 'Unsupported' | ''
+  supportLevel: SteamDeckSupportLevel
 }
 
 const OnDeckIcon: FC<OnDeckIconProps> = ({ supportLevel }) => {
