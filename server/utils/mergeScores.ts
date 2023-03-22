@@ -2,15 +2,17 @@ import Game from "types/Game";
 import Metadata from "types/Metadata";
 
 const mergeMetadata = (games: Game[], scores: Metadata[]) => {
-    let matchedScore: Metadata | undefined
+    let matchedMetadata: Metadata | undefined
     return games.map((game): Metadata | Game => {
-        matchedScore = scores.find((score: Metadata) => score.id === game.id)
+        matchedMetadata = scores.find((score: Metadata) => score.id === game.id)
         return {
             ...game,
-            metacriticUrl: matchedScore?.metacriticUrl,
-            metacriticScore: matchedScore?.metacriticScore,
-            steamScore: matchedScore?.steamScore,
-            steamReviewCount: matchedScore?.steamReviewCount
+            metacriticUrl: matchedMetadata?.metacriticUrl,
+            metacriticScore: matchedMetadata?.metacriticScore,
+            steamScore: matchedMetadata?.steamScore,
+            steamReviewCount: matchedMetadata?.steamReviewCount,
+            onMac: matchedMetadata?.onMac,
+            onDeck: matchedMetadata?.onDeck,
         }
     })
 }

@@ -63,7 +63,7 @@ app.post('/update-metadata', async (req: Request, res: Response) => {
           ?.split(' user')[0]
           ?.split('% of the ');
         const onMac: boolean = !!$('div.game_area_purchase_platform span.platform_img mac')
-        const onDeck = $('span.deckverified_CompatibilityDetailRatingDescription__2HWJ').first().text() || ''
+        const onDeck = $('span.deckverified_CompatibilityDetailRatingDescription__2HWJ').first()?.text() || ''
 
         metadata.push({
           id: game.appid,
