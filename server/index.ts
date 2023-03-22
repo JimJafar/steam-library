@@ -6,12 +6,13 @@ import cors from 'cors'
 import axios from 'axios'
 import dotenv from 'dotenv'
 import fs from 'fs'
-import reviewScores from './review-scores.json'
+import metadata from './metadata.json'
 import SteamGame from './types/SteamGame'
-import ReviewScore from './types/ReviewScore'
-import mergeScores from './utils/mergeScores'
+import ReviewScore from './types/Metadata'
+import mergeMetadata from './utils/mergeScores'
 import parseSteamGames from './utils/parseSteamGames'
 import delay from './utils/delay'
+import Metadata from './types/Metadata'
 
 dotenv.config()
 
@@ -33,18 +34,18 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.get('/library', async (req: Request, res: Response) => {
   const response = await axios.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true`)
   res.send(
-    mergeScores(
+    mergeMetadata(
       parseSteamGames(response.data.response.games),
-      reviewScores
+      metadata
     )
   )
 })
 
-app.post('/update-scores', async (req: Request, res: Response) => {
+app.post('/update-metadata', async (req: Request, res: Response) => {
   const gamesResponse = await axios.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true`)
   const games: SteamGame[] = gamesResponse.data.response.games
   const updatePromises: Promise<void>[] = games.map(async (game: SteamGame) => {
-    if (req.body.forceAll || !reviewScores.some((score: ReviewScore) => score.id === game.appid)) {
+    if (req.body.forceAll || !metadata.some((meta: Metadata) => meta.id === game.appid)) {
       try {
         const steamPage = await axios.get(
           `https://store.steampowered.com/app/${game.appid}`,
@@ -61,16 +62,18 @@ app.post('/update-scores', async (req: Request, res: Response) => {
           .attr('data-tooltip-html')
           ?.split(' user')[0]
           ?.split('% of the ');
+        const onMac: boolean = !!$('div.game_area_purchase_platform span.platform_img mac')
+        const onDeck = $('span.deckverified_CompatibilityDetailRatingDescription__2HWJ').first().text() || ''
 
-        if (metacriticLink || steamScoreParts) {
-          reviewScores.push({
-            id: game.appid,
-            metacriticUrl: metacriticLink || '',
-            metacriticScore: parseInt(metacriticScore) || 0,
-            steamScore: steamScoreParts ? parseInt(steamScoreParts[0], 10) : 0,
-            steamReviewCount: steamScoreParts ? parseInt(steamScoreParts[1].replace(',', ''), 10) : 0,
-          })
-        }
+        metadata.push({
+          id: game.appid,
+          metacriticUrl: metacriticLink || '',
+          metacriticScore: parseInt(metacriticScore) || 0,
+          steamScore: steamScoreParts ? parseInt(steamScoreParts[0], 10) : 0,
+          steamReviewCount: steamScoreParts ? parseInt(steamScoreParts[1].replace(',', ''), 10) : 0,
+          onMac,
+          onDeck,
+        })
       } catch(e: any) {
         console.error(`${game.name} failed: ${e.message}`)
       }
@@ -81,12 +84,12 @@ app.post('/update-scores', async (req: Request, res: Response) => {
 
   await Promise.all(updatePromises)
 
-  fs.writeFileSync('./review-scores.json', JSON.stringify(reviewScores, undefined, 2), {
+  fs.writeFileSync('./metadata.json', JSON.stringify(metadata, undefined, 2), {
     encoding: 'utf8',
     flag: 'w'
   })
 
-  res.send(mergeScores(parseSteamGames(games), reviewScores))
+  res.send(mergeMetadata(parseSteamGames(games), metadata))
 })
 
 app.listen(port, () => {

@@ -4,6 +4,7 @@ import Game from '../../types/Game'
 import formatLastPlayed from '../../utils/formatLastPlayed'
 import formatPlaytime from '../../utils/formatPlaytime'
 import GameIcon from '../GameIcon'
+import OnDeckIcon from '../OnDeckIcon'
 
 export type GameTableProps = {
   onSort: (field: Field) => void,
@@ -21,6 +22,8 @@ const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
           <th onClick={() => onSort(Field.lastPlayed)} className="hide-on-mobile">played</th>
           <th onClick={() => onSort(Field.steamScore)}>Steam</th>
           <th onClick={() => onSort(Field.metacriticScore)}>Metacritic</th>
+          <th onClick={() => onSort(Field.onMac)}>onMac</th>
+          <th onClick={() => onSort(Field.onDeck)}>onDeck</th>
         </tr>
         </thead>
         <tbody>
@@ -56,6 +59,12 @@ const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
               : ''
             
           }</td>
+          <td>
+            {game.onMac && <img src="icon_platform_mac.png" alt="Mac icon" />}
+          </td>
+          <td>
+            {game.onDeck && <OnDeckIcon supportLevel={game.onDeck} />}
+          </td>
         </tr>)}
         </tbody>
       </table>

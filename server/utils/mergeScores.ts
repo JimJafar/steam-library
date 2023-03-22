@@ -1,10 +1,10 @@
 import Game from "types/Game";
-import ReviewScore from "types/ReviewScore";
+import Metadata from "types/Metadata";
 
-const mergeScores = (games: Game[], scores: ReviewScore[]) => {
-    let matchedScore: ReviewScore | undefined
-    return games.map((game): ReviewScore | Game => {
-        matchedScore = scores.find((score: ReviewScore) => score.id === game.id)
+const mergeMetadata = (games: Game[], scores: Metadata[]) => {
+    let matchedScore: Metadata | undefined
+    return games.map((game): Metadata | Game => {
+        matchedScore = scores.find((score: Metadata) => score.id === game.id)
         return {
             ...game,
             metacriticUrl: matchedScore?.metacriticUrl,
@@ -15,4 +15,4 @@ const mergeScores = (games: Game[], scores: ReviewScore[]) => {
     })
 }
 
-export default mergeScores
+export default mergeMetadata

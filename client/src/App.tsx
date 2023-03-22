@@ -8,7 +8,7 @@ import sortFactory from './utils/sortFactory';
 
 const App = () => {
   const [loading, setLoading] = useState(true)
-  const [updatingScores, setUpdatingScores] = useState(false)
+  const [updatingMetadata, setUpdatingMetadata] = useState(false)
   const [games, setGames] = useState([])
   const [filteredGames, setFilteredGames] = useState<Game[]>([])
 
@@ -37,12 +37,12 @@ const App = () => {
     setLoading(false)
   }
 
-  const updateScores = async (forceAll: boolean = false) => {
-    setUpdatingScores(true)
-    const updateScoresResponse = await axios.post(`${process.env.REACT_APP_API_URL}/update-scores`, { forceAll })
-    if (updateScoresResponse.status === 200) {
-      setFilteredGames([...updateScoresResponse.data])
-      setUpdatingScores(false)
+  const updateMetadata = async (forceAll: boolean = false) => {
+    setUpdatingMetadata(true)
+    const updateMetadataResponse = await axios.post(`${process.env.REACT_APP_API_URL}/update-metadata`, { forceAll })
+    if (updateMetadataResponse.status === 200) {
+      setFilteredGames([...updateMetadataResponse.data])
+      setUpdatingMetadata(false)
     }
   }
 
@@ -55,12 +55,12 @@ const App = () => {
     {!loading && (
       <>
         Showing {filteredGames.length} of {games.length} Steam games
-        <p>
+        {!updatingMetadata && <p>
           <input type='text' onChange={onSearchChange} placeholder='Search...' />
-          <button type='button' onClick={() => updateScores()} disabled={updatingScores}>Update missing scores</button>
-          <button type='button' onClick={() => updateScores(true)} disabled={updatingScores}>Update ALL scores</button>
-          {updatingScores && 'Updating scores...'}
-        </p>
+          <button type='button' onClick={() => updateMetadata()}>Update missing metadata</button>
+          <button type='button' onClick={() => updateMetadata(true)}>Update ALL metadata</button>
+        </p>}
+        {updatingMetadata && 'Updating Metadata...'}
         <GameTable games={filteredGames} onSort={onSort} />
       </>
     )}
