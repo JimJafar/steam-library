@@ -60,7 +60,7 @@ const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
             
           }</td>
           <td>
-            {game.onMac && <img src="icon_platform_mac.png" alt="Mac icon" />}
+            {game.onMac && <img className='table-icon' src="icon_platform_mac.png" alt="Mac icon" />}
           </td>
           <td>
             {game.onDeck && <OnDeckIcon supportLevel={game.onDeck} />}
