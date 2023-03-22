@@ -1,6 +1,7 @@
 import { Request, Response } from 'express'
 import bodyParser from 'body-parser'
-import cheerio from 'cheerio'
+import { decode } from 'html-entities';
+import { load } from 'cheerio'
 import express from 'express'
 import cors from 'cors'
 import axios from 'axios'
@@ -28,7 +29,7 @@ app.use(cors({
   optionsSuccessStatus: 200 // legacy browsers
 }))
 
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 app.get('/library', async (req: Request, res: Response) => {
   const response = await axios.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true`)
@@ -43,8 +44,15 @@ app.get('/library', async (req: Request, res: Response) => {
 app.post('/update-metadata', async (req: Request, res: Response) => {
   const gamesResponse = await axios.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true`)
   const games: SteamGame[] = gamesResponse.data.response.games
-  const updatePromises: Promise<void>[] = games.map(async (game: SteamGame) => {
-    if (req.body.forceAll || !metadata.some((meta: Metadata) => meta.id === game.appid)) {
+  const metadataOut: Metadata[] = req.body.forceAll ? [] : [...metadata]
+  let game: SteamGame
+
+  for (let i=0; i < games.length; i++) {
+    console.log(`Fetching metadata for ${i + 1} of ${games.length} games`);
+
+    game = games[i]
+
+    if (!metadataOut.some((meta: Metadata) => meta.id === game.appid)) {
       try {
         const steamPage = await axios.get(
           `https://store.steampowered.com/app/${game.appid}`,
@@ -54,41 +62,54 @@ app.post('/update-metadata', async (req: Request, res: Response) => {
             }
           }
         )
-        const $ = cheerio.load(steamPage.data)
+        const $ = load(steamPage.data)
         const metacriticScore = $('#game_area_metascore > div.score').first()?.text()
         const metacriticLink = $('#game_area_metalink > a').first()?.attr("href")
         const steamScoreParts = $('#review_histogram_rollup_section .game_review_summary')
           .attr('data-tooltip-html')
           ?.split(' user')[0]
-          ?.split('% of the ');
+          ?.split('% of the ')
         const onMac: boolean = !!$('div.game_area_purchase_platform span.platform_img mac')
-        const onDeck = $('span.deckverified_CompatibilityDetailRatingDescription__2HWJ').first()?.text() || ''
+        let onDeck = $('div#application_config').first().attr('data-deckcompatibility')
 
-        metadata.push({
+        try {
+          switch(JSON.parse(decode(onDeck || '') || '{}').resolved_category) {
+            case 1:
+              onDeck = 'Unsupported'
+            case 2:
+              onDeck = 'Playable'
+              break
+            case 3:
+              onDeck = 'Verified'
+              break
+            default:
+              onDeck = ''
+          }
+        } catch(e) { console.log(e) }
+
+        metadataOut.push({
           id: game.appid,
           metacriticUrl: metacriticLink || '',
           metacriticScore: parseInt(metacriticScore) || 0,
           steamScore: steamScoreParts ? parseInt(steamScoreParts[0], 10) : 0,
           steamReviewCount: steamScoreParts ? parseInt(steamScoreParts[1].replace(',', ''), 10) : 0,
           onMac,
-          onDeck,
+          onDeck: onDeck || '',
         })
       } catch(e: any) {
         console.error(`${game.name} failed: ${e.message}`)
       }
 
-      await delay(500)
+      await delay(250)
     }
-  })
+  }
 
-  await Promise.all(updatePromises)
-
-  fs.writeFileSync('./metadata.json', JSON.stringify(metadata, undefined, 2), {
+  fs.writeFileSync('./metadata.json', JSON.stringify(metadataOut, undefined, 2), {
     encoding: 'utf8',
     flag: 'w'
   })
 
-  res.send(mergeMetadata(parseSteamGames(games), metadata))
+  res.send(mergeMetadata(parseSteamGames(games), metadataOut))
 })
 
 app.listen(port, () => {

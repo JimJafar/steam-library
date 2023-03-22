@@ -66,6 +66,18 @@ table th:first-of-type, table td:first-of-type {
   height: 20px;
 }
 
+.deck-unsupported-icon {
+  color: #dcdedf;
+}
+
+.deck-playable-icon {
+  color: #ffc82c;
+}
+
+.deck-verified-icon {
+  color: #59bf40;
+}
+
 .nowrap {
   white-space: nowrap;
 }

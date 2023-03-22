@@ -55,12 +55,14 @@ const App = () => {
     {!loading && (
       <>
         Showing {filteredGames.length} of {games.length} Steam games
-        {!updatingMetadata && <p>
+        <p>
           <input type='text' onChange={onSearchChange} placeholder='Search...' />
-          <button type='button' onClick={() => updateMetadata()}>Update missing metadata</button>
-          <button type='button' onClick={() => updateMetadata(true)}>Update ALL metadata</button>
-        </p>}
-        {updatingMetadata && 'Updating Metadata...'}
+          {!updatingMetadata && <>
+            <button type='button' onClick={() => updateMetadata()}>Update missing metadata</button>
+            <button type='button' onClick={() => updateMetadata(true)}>Update ALL metadata</button>
+          </>}
+          {updatingMetadata && ' Updating Metadata...'}
+        </p>
         <GameTable games={filteredGames} onSort={onSort} />
       </>
     )}
