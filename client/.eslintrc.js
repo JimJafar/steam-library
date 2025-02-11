@@ -4,76 +4,72 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
-  ignorePatterns: [
-    'jest.config.ts',
-    '.husky',
-    '/coverage',
-    '/node_modules',
-  ],
-  parser: '@typescript-eslint/parser',
+  extends: ["plugin:react/recommended", "airbnb", "prettier"],
+  ignorePatterns: ["jest.config.ts", ".husky", "/coverage", "/node_modules"],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ["react", "@typescript-eslint"],
   rules: {
-    'react/jsx-filename-extension': [
+    "react/jsx-filename-extension": [
       1,
-      { extensions: ['.js', '.jsx', '.tsx', '.ts'] },
+      { extensions: [".js", ".jsx", ".tsx", ".ts"] },
     ],
-    'jsx-a11y/anchor-is-valid': 'off',
-    'arrow-body-style': 'off',
-    'react/function-component-definition': [
+    "jsx-a11y/anchor-is-valid": "off",
+    "arrow-body-style": "off",
+    "react/function-component-definition": [
       2,
       {
-        namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function',
+        namedComponents: "arrow-function",
+        unnamedComponents: "arrow-function",
       },
     ],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
+    "import/extensions": [
+      "error",
+      "ignorePackages",
       {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-        '': 'never',
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+        "": "never",
       },
     ],
-    '@typescript-eslint/no-unused-vars': [
-      'warn',
-      { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
     ],
-    'no-shadow': 'off',
-    '@typescript-eslint/no-shadow': 'error',
-    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
-    'import/no-extraneous-dependencies': [
-      'error',
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
+    "import/no-extraneous-dependencies": [
+      "error",
       {
-        devDependencies: ['**/*.test.{ts,tsx}', 'src/setupTests.js'],
+        devDependencies: ["**/*.test.{ts,tsx}", "src/setupTests.js"],
       },
     ],
-    'jsx-a11y/label-has-associated-control': [
-      'error',
+    "jsx-a11y/label-has-associated-control": [
+      "error",
       {
-        controlComponents: ['Field'],
+        controlComponents: ["Field"],
       },
     ],
-    'no-underscore-dangle': ['error', { allow: ['__typename'] }],
-    'no-restricted-imports': [
-      'error',
-    ],
+    "no-underscore-dangle": ["error", { allow: ["__typename"] }],
+    "no-restricted-imports": ["error"],
   },
   settings: {
-    'import/resolver': {
+    "import/resolver": {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
       },
     },
+  },
+  globals: {
+    scheduler: "writable",
   },
 };
