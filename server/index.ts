@@ -12,7 +12,7 @@ import mergeMetadata from "./utils/mergeMetadata";
 import parseSteamGames from "./utils/parseSteamGames";
 import delay from "./utils/delay";
 import Metadata from "./types/Metadata";
-import shouldBeRefetched from "utils/shouldBeRefetched";
+import shouldBeRefetched from "./utils/shouldBeRefetched";
 
 dotenv.config();
 
