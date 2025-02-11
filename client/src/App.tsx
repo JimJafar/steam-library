@@ -18,12 +18,14 @@ const App = () => {
     setFilteredGames([...filteredGames].sort(compare))
   }
 
-  const onSearchChange = (event: ChangeEvent) => {
+  const onSearchChange = async (event: ChangeEvent) => {
+    await scheduler.yield();
+    const searchTerm = (event.target as HTMLInputElement).value.toLowerCase()
     setFilteredGames(
         games.filter((game: Game) =>
             game.name
               .toLowerCase()
-              .includes((event.target as HTMLInputElement).value.toLowerCase())))
+              .includes(searchTerm)))
   }
 
   const fetchGames = async () => {
@@ -39,11 +41,20 @@ const App = () => {
 
   const updateMetadata = async (forceAll: boolean = false) => {
     setUpdatingMetadata(true)
-    const updateMetadataResponse = await axios.post(`${process.env.REACT_APP_API_URL}/update-metadata`, { forceAll })
-    if (updateMetadataResponse.status === 200) {
-      setFilteredGames([...updateMetadataResponse.data])
-      setUpdatingMetadata(false)
-    }
+    await scheduler.yield()
+    const worker = new Worker(new URL('./utils/updateMetadataWorker.ts', import.meta.url))
+
+    worker.onmessage = ((event) => {
+      const updateMetadataResponse = event.data
+      console.log('Received message from the worker:', updateMetadataResponse)
+      if (updateMetadataResponse.status === 200) {
+        setFilteredGames([...updateMetadataResponse.data])
+        setUpdatingMetadata(false)
+      }
+      worker.terminate()
+    })
+
+    worker.postMessage({ forceAll })
   }
 
   useEffect(() => {

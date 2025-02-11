@@ -7,7 +7,6 @@ import cors from 'cors'
 import axios from 'axios'
 import dotenv from 'dotenv'
 import fs from 'fs'
-import metadata from './metadata.json'
 import SteamGame from './types/SteamGame'
 import mergeMetadata from './utils/mergeMetadata'
 import parseSteamGames from './utils/parseSteamGames'
@@ -32,6 +31,8 @@ app.use(cors({
 app.use(bodyParser.json())
 
 app.get('/library', async (req: Request, res: Response) => {
+  // need to explicitly read the JSON file instead of importing it because there is no way to invalidate the import cache
+  const metadata = JSON.parse(fs.readFileSync('./metadata.json', 'utf8'))
   const response = await axios.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true`)
   res.send(
     mergeMetadata(
@@ -44,7 +45,7 @@ app.get('/library', async (req: Request, res: Response) => {
 app.post('/update-metadata', async (req: Request, res: Response) => {
   const gamesResponse = await axios.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true`)
   const games: SteamGame[] = gamesResponse.data.response.games
-  const metadataOut: Metadata[] = req.body.forceAll ? [] : [...metadata]
+  const metadataOut: Metadata[] = req.body.forceAll ? [] : JSON.parse(fs.readFileSync('./metadata.json', 'utf8'))
   let game: SteamGame
 
   for (let i=0; i < games.length; i++) {
