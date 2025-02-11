@@ -2,6 +2,7 @@ version: "2"
 services:
   server:
     container_name: "steam-library-server"
+    restart: always
     image: "steam-library:0.1"
     working_dir: /home/node/server
     ports:
@@ -15,6 +16,7 @@ services:
       - ./server/.env.prod
   client:
     container_name: "steam-library-client"
+    restart: always
     image: "steam-library:0.1"
     working_dir: /home/node/client
     ports:
