@@ -123,7 +123,7 @@ const App = () => {
             aria-labelledby="logs"
             aria-describedby="logs"
           >
-            <div>
+            <div className="modal-content">
               <h2>Logs</h2>
               <pre>{logs}</pre>
             </div>

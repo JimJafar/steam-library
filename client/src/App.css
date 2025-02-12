@@ -110,6 +110,14 @@ table th:first-of-type, table td:first-of-type {
   }
 }
 
+.modal-content {
+  background-color: #fefefe;
+  margin: 10em auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
 button {
   border-width: 1px !important;
   border-style: solid !important;
