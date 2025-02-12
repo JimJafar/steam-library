@@ -77,6 +77,7 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
               Cookie:
                 "lastagecheckage=1-January-1982; wants_mature_content=1; birthtime=378691201;",
             },
+            withCredentials: true,
           }
         );
         const $ = load(steamPage.data);
