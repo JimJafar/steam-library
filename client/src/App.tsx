@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import Modal from "@mui/material/Modal";
 import axios from "axios";
 import GameTable from "./components/GameTable";
 import "./App.css";
@@ -12,6 +13,7 @@ const App = () => {
   const [updatingMetadata, setUpdatingMetadata] = useState(false);
   const [games, setGames] = useState([]);
   const [filteredGames, setFilteredGames] = useState<Game[]>([]);
+  const [logs, setLogs] = useState("");
 
   const onSort = (field: Field) => {
     const compare = sortFactory(
@@ -74,6 +76,13 @@ const App = () => {
     worker.postMessage({ forceAll });
   };
 
+  const showLogs = async () => {
+    const logsResponse = await axios.get(
+      `${process.env.REACT_APP_API_URL}/logs`
+    );
+    setLogs(logsResponse.data);
+  };
+
   useEffect(() => {
     fetchGames();
   }, []);
@@ -98,12 +107,26 @@ const App = () => {
                 <button type="button" onClick={() => updateMetadata(true)}>
                   Update ALL metadata
                 </button>
+                <button type="button" onClick={() => showLogs()}>
+                  Logs
+                </button>
               </>
             )}
             {updatingMetadata && " Updating Metadata..."}
           </p>
           <GameTable games={filteredGames} onSort={onSort} />
           <ToastContainer aria-label="toasts" />
+          <Modal
+            open={logs.length > 0}
+            onClose={() => setLogs("")}
+            aria-labelledby="logs"
+            aria-describedby="logs"
+          >
+            <div>
+              <h2>Logs</h2>
+              <pre>{logs}</pre>
+            </div>
+          </Modal>
         </>
       )}
     </>

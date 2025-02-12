@@ -150,6 +150,12 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
   res.send(mergeMetadata(parseSteamGames(games), metadataOut));
 });
 
+app.get("/logs", async (req: Request, res: Response) => {
+  // need to explicitly read the JSON file instead of importing it because there is no way to invalidate the import cache
+  const logs = JSON.parse(fs.readFileSync("./metadata.log", "utf8"));
+  res.send(logs);
+});
+
 app.listen(port, () => {
   writeLog(
     `Steam library server listening on port ${port} and allowing connections from ${CORS_ORIGIN}`
