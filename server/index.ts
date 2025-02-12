@@ -124,7 +124,7 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
           writeLog(`Steam score: ${steamScoreParts?.join(" | ")}.`);
         }
 
-        metadataOut.push({
+        const newMetadata: Metadata = {
           id: game.appid,
           metacriticUrl: metacriticLink || "",
           metacriticScore: parseInt(metacriticScore) || 0,
@@ -134,7 +134,13 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
             : 0,
           onMac,
           onDeck: onDeck || "",
-        });
+        };
+
+        if (existingGame) {
+          metadataOut[metadataOut.indexOf(existingGame)] = newMetadata;
+        } else {
+          metadataOut.push(newMetadata);
+        }
       } catch (e: any) {
         writeLog(
           `Fetching metadata for ${game.name} failed: ${e.message || ""}`
