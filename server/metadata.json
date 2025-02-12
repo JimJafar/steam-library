@@ -12130,5 +12130,1328 @@
     "steamReviewCount": 0,
     "onMac": false,
     "onDeck": ""
+  },
+  {
+    "id": 8000,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/tomb-raider-anniversary?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 83,
+    "steamScore": 81,
+    "steamReviewCount": 5849,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 12140,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/max-payne?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 89,
+    "steamScore": 88,
+    "steamReviewCount": 11467,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 24170,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 4540,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 12150,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/max-payne-2-the-fall-of-max-payne?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 94,
+    "steamReviewCount": 9040,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 57900,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/duke-nukem-forever?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 54,
+    "steamScore": 70,
+    "steamReviewCount": 5832,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 44200,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 41210,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 50130,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/mafia-ii?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 77,
+    "steamScore": 93,
+    "steamReviewCount": 33024,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 6910,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/deus-ex?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 90,
+    "steamScore": 94,
+    "steamReviewCount": 12506,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 8140,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/tomb-raider-underworld?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 80,
+    "steamScore": 76,
+    "steamReviewCount": 5386,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 102840,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/shank-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 72,
+    "steamScore": 82,
+    "steamReviewCount": 2344,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 55230,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/saints-row-the-third?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 84,
+    "steamScore": 95,
+    "steamReviewCount": 47864,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 12100,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/grand-theft-auto-iii?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 93,
+    "steamScore": 86,
+    "steamReviewCount": 14515,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 67370,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/the-darkness-ii?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 77,
+    "steamScore": 91,
+    "steamReviewCount": 6973,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 22380,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/fallout-new-vegas?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 84,
+    "steamScore": 96,
+    "steamReviewCount": 178657,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 6920,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/deus-ex-invisible-war?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 80,
+    "steamScore": 57,
+    "steamReviewCount": 1944,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 6900,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/hitman-codename-47?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 73,
+    "steamScore": 71,
+    "steamReviewCount": 3329,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 50300,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/spec-ops-the-line?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 76,
+    "steamScore": 93,
+    "steamReviewCount": 54536,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 409710,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/bioshock-the-collection?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 80,
+    "steamScore": 82,
+    "steamReviewCount": 45077,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 208200,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 85,
+    "steamReviewCount": 7832,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 219150,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/hotline-miami?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 85,
+    "steamScore": 97,
+    "steamReviewCount": 86909,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 6850,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/hitman-2-silent-assassin?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 87,
+    "steamScore": 82,
+    "steamReviewCount": 3019,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 225020,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 60,
+    "steamReviewCount": 1392,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 228020,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 55110,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/red-faction-armageddon?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 75,
+    "steamScore": 70,
+    "steamReviewCount": 2479,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 224980,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 85,
+    "steamReviewCount": 1216,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 225000,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 74,
+    "steamReviewCount": 744,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 220440,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/dmc-devil-may-cry?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 85,
+    "steamScore": 93,
+    "steamReviewCount": 18062,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 39140,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 92,
+    "steamReviewCount": 23553,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 203160,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/tomb-raider?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 96,
+    "steamReviewCount": 152698,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 233450,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/prison-architect?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 83,
+    "steamScore": 89,
+    "steamReviewCount": 57496,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 65930,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/the-bureau-xcom-declassified?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 66,
+    "steamScore": 67,
+    "steamReviewCount": 4658,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 218620,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/payday-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 79,
+    "steamScore": 90,
+    "steamReviewCount": 434534,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 234080,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 80,
+    "steamReviewCount": 6973,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 249380,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 209000,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/batman-arkham-origins?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 74,
+    "steamScore": 89,
+    "steamReviewCount": 37754,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 206420,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/saints-row-iv?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 87,
+    "steamReviewCount": 57073,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 247430,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 86,
+    "steamReviewCount": 2450,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 8850,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/bioshock-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 88,
+    "steamScore": 88,
+    "steamReviewCount": 10803,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 409720,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 70,
+    "steamReviewCount": 20379,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 49520,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/borderlands-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 89,
+    "steamScore": 95,
+    "steamReviewCount": 193785,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 201040,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 367540,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 235460,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/metal-gear-rising-revengeance?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 83,
+    "steamScore": 96,
+    "steamReviewCount": 63323,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 271590,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/grand-theft-auto-v?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 96,
+    "steamScore": 87,
+    "steamReviewCount": 1790,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 254700,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/resident-evil-4-ultimate-hd-edition?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 79,
+    "steamScore": 93,
+    "steamReviewCount": 63185,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 283640,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/salt-and-sanctuary?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 84,
+    "steamScore": 89,
+    "steamReviewCount": 18569,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 231430,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/company-of-heroes-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 80,
+    "steamScore": 80,
+    "steamReviewCount": 65565,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 201810,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/wolfenstein-the-new-order?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 81,
+    "steamScore": 91,
+    "steamReviewCount": 40709,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 38400,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/fallout?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 89,
+    "steamScore": 95,
+    "steamReviewCount": 13988,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 38410,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/fallout-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 94,
+    "steamReviewCount": 11980,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 238010,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/deus-ex-human-revolution---directors-cut?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 91,
+    "steamScore": 92,
+    "steamReviewCount": 23486,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 323190,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/frostpunk?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 84,
+    "steamScore": 92,
+    "steamReviewCount": 99561,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 302510,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/ryse-son-of-rome?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 61,
+    "steamScore": 87,
+    "steamReviewCount": 33111,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 307690,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 93,
+    "steamReviewCount": 58854,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 359870,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 89,
+    "steamReviewCount": 16096,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 360130,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 397080,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 329050,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 88,
+    "steamReviewCount": 12765,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 397540,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/borderlands-3?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 81,
+    "steamScore": 85,
+    "steamReviewCount": 111997,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 234140,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/mad-max?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 73,
+    "steamScore": 91,
+    "steamReviewCount": 50924,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 410700,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 225540,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/just-cause-3?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 74,
+    "steamScore": 84,
+    "steamReviewCount": 98034,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 391220,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/rise-of-the-tomb-raider?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 94,
+    "steamReviewCount": 107945,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 434050,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/duke-nukem-3d-20th-anniversary-world-tour?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 72,
+    "steamScore": 85,
+    "steamReviewCount": 4438,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 460790,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/bayonetta?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 90,
+    "steamScore": 92,
+    "steamReviewCount": 23859,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 379720,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/doom?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 85,
+    "steamScore": 95,
+    "steamReviewCount": 135999,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 403640,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/dishonored-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 89,
+    "steamReviewCount": 39258,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 523650,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/lust-for-darkness?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 50,
+    "steamScore": 68,
+    "steamReviewCount": 3827,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 292030,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/the-witcher-3-wild-hunt?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 93,
+    "steamScore": 96,
+    "steamReviewCount": 749022,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 8870,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/bioshock-infinite?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 94,
+    "steamScore": 93,
+    "steamReviewCount": 104315,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 307780,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/mortal-kombat-xl?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 84,
+    "steamScore": 87,
+    "steamReviewCount": 35264,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 535230,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 0,
+    "steamReviewCount": 0,
+    "onMac": false,
+    "onDeck": ""
+  },
+  {
+    "id": 287700,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/metal-gear-solid-v-the-phantom-pain?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 91,
+    "steamScore": 91,
+    "steamReviewCount": 65319,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 311340,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/metal-gear-solid-v-ground-zeroes?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 80,
+    "steamScore": 83,
+    "steamReviewCount": 12392,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 612880,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/wolfenstein-ii-the-new-colossus?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 80,
+    "steamReviewCount": 30146,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 460810,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/vanquish?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 78,
+    "steamScore": 89,
+    "steamReviewCount": 6165,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 631510,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 92,
+    "steamReviewCount": 9638,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 493900,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/dungeons-3?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 75,
+    "steamScore": 93,
+    "steamReviewCount": 12333,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 414340,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/hellblade-senuas-sacrifice?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 83,
+    "steamScore": 90,
+    "steamReviewCount": 63278,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 377160,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/fallout-4?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 84,
+    "steamScore": 83,
+    "steamReviewCount": 257124,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 782330,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/doom-eternal?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 88,
+    "steamScore": 91,
+    "steamReviewCount": 171149,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 847370,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/sunset-overdrive?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 83,
+    "steamScore": 90,
+    "steamReviewCount": 10478,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 873940,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/crying-suns?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 75,
+    "steamScore": 85,
+    "steamReviewCount": 2925,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 638970,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/yakuza-0?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 95,
+    "steamReviewCount": 57101,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 883710,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/resident-evil-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 89,
+    "steamScore": 97,
+    "steamReviewCount": 114319,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 356190,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 88,
+    "steamReviewCount": 78434,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 532210,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 86,
+    "steamReviewCount": 35005,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 492720,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/tropico-6?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 78,
+    "steamScore": 87,
+    "steamReviewCount": 17842,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 976310,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/mortal-kombat-11?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 82,
+    "steamScore": 88,
+    "steamReviewCount": 77267,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 208650,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 91,
+    "steamReviewCount": 92109,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 524220,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/nier-automata?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 84,
+    "steamScore": 88,
+    "steamReviewCount": 101257,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 927380,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/yakuza-kiwami-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 82,
+    "steamScore": 95,
+    "steamReviewCount": 12401,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1069690,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 72,
+    "steamReviewCount": 1327,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1091500,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/cyberpunk-2077?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 85,
+    "steamReviewCount": 723198,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1151640,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 87,
+    "steamReviewCount": 92842,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1167750,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 71,
+    "steamReviewCount": 557,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 517630,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/just-cause-4?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 68,
+    "steamScore": 63,
+    "steamReviewCount": 21209,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1213210,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/command-conquer-remastered-collection?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 82,
+    "steamScore": 90,
+    "steamReviewCount": 28929,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1281590,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 88,
+    "steamReviewCount": 5618,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1294420,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 91,
+    "steamReviewCount": 2012,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1151340,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 76,
+    "steamReviewCount": 64684,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1030840,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/mafia-definitive-edition?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 78,
+    "steamScore": 86,
+    "steamReviewCount": 67717,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1328670,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/mass-effect-legendary-edition?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 90,
+    "steamReviewCount": 49412,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1235140,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/yakuza-like-a-dragon?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 83,
+    "steamScore": 94,
+    "steamReviewCount": 24058,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1113560,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 88,
+    "steamReviewCount": 18733,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1139900,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/ghostrunner?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 81,
+    "steamScore": 91,
+    "steamReviewCount": 43983,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1494260,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 70,
+    "steamReviewCount": 320,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 617290,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/remnant-from-the-ashes?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 78,
+    "steamScore": 85,
+    "steamReviewCount": 43084,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1088710,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 80,
+    "steamReviewCount": 6682,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1105500,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 92,
+    "steamReviewCount": 4683,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 200510,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/xcom-enemy-unknown?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 89,
+    "steamScore": 93,
+    "steamReviewCount": 38248,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 882100,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 72,
+    "steamReviewCount": 19764,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1388590,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 93,
+    "steamReviewCount": 5825,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 870780,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/control?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 85,
+    "steamScore": 88,
+    "steamReviewCount": 37510,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1583230,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 89,
+    "steamReviewCount": 15347,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1590910,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/forgive-me-father?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 74,
+    "steamScore": 85,
+    "steamReviewCount": 2500,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 239140,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/dying-light-the-following---enhanced-edition?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 87,
+    "steamScore": 95,
+    "steamReviewCount": 330296,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1016800,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/chernobylite?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 75,
+    "steamScore": 82,
+    "steamReviewCount": 10933,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 601150,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/devil-may-cry-5?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 89,
+    "steamScore": 96,
+    "steamReviewCount": 91042,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1252330,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/deathloop?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 87,
+    "steamScore": 77,
+    "steamReviewCount": 18867,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 489830,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/the-elder-scrolls-v-skyrim-special-edition?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 74,
+    "steamScore": 94,
+    "steamReviewCount": 180988,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1245620,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/elden-ring?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 94,
+    "steamScore": 92,
+    "steamReviewCount": 744135,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1888160,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/armored-core-vi-fires-of-rubicon?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 91,
+    "steamReviewCount": 58987,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1611910,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/warhammer-40000-chaos-gate---daemonhunters?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 81,
+    "steamScore": 77,
+    "steamReviewCount": 9759,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1577120,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 82,
+    "steamReviewCount": 10675,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1283400,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 73,
+    "steamReviewCount": 2957,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1824220,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/chivalry-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 82,
+    "steamScore": 81,
+    "steamReviewCount": 34637,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 861650,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 84,
+    "steamReviewCount": 11947,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 2138710,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/sifu?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 81,
+    "steamScore": 92,
+    "steamReviewCount": 14187,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1630110,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 73,
+    "steamReviewCount": 518,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1546970,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 66,
+    "steamReviewCount": 3427,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1546990,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 78,
+    "steamReviewCount": 4260,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1547000,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 75,
+    "steamReviewCount": 7293,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1920490,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 68,
+    "steamReviewCount": 1360,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1942660,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 78,
+    "steamReviewCount": 7456,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 2369390,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 71,
+    "steamReviewCount": 23397,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1549970,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 81,
+    "steamReviewCount": 18855,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 2131630,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 76,
+    "steamReviewCount": 2116,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 2131640,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 85,
+    "steamReviewCount": 1527,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 2131650,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 84,
+    "steamReviewCount": 3244,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 2306740,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 57,
+    "steamReviewCount": 97,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 742420,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 62,
+    "steamReviewCount": 4073,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 1325200,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/nioh-2-the-complete-edition?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 86,
+    "steamScore": 88,
+    "steamReviewCount": 29942,
+    "onMac": false,
+    "onDeck": "Playable"
+  },
+  {
+    "id": 2144740,
+    "metacriticUrl": "https://www.metacritic.com/game/pc/ghostrunner-2?ftag=MCD-06-10aaa1f",
+    "metacriticScore": 81,
+    "steamScore": 82,
+    "steamReviewCount": 6287,
+    "onMac": false,
+    "onDeck": "Verified"
+  },
+  {
+    "id": 1282100,
+    "metacriticUrl": "",
+    "metacriticScore": 0,
+    "steamScore": 83,
+    "steamReviewCount": 39936,
+    "onMac": false,
+    "onDeck": "Playable"
   }
 ]
