@@ -64,6 +64,9 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
     existingGame = metadataOut.find((meta: Metadata) => meta.id === game.appid);
 
     if (shouldBeFetched(existingGame)) {
+      if (existingGame) {
+        writeLog(`Re-fetching metadata for ${game.name}.`);
+      }
       try {
         const steamPage = await axios.get(
           `https://store.steampowered.com/app/${game.appid}`,
