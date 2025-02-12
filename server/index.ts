@@ -155,7 +155,7 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
 
 app.get("/logs", async (req: Request, res: Response) => {
   // need to explicitly read the JSON file instead of importing it because there is no way to invalidate the import cache
-  const logs = JSON.parse(fs.readFileSync("./metadata.log", "utf8"));
+  const logs = fs.readFileSync("./metadata.log", "utf8");
   res.send({ logs });
 });
 
