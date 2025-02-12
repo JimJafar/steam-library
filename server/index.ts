@@ -57,10 +57,9 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
   let existingGame: Metadata | undefined;
 
   clearLog();
+  writeLog(`Fetching metadata for ${games.length} games`);
 
   for (let i = 0; i < games.length; i++) {
-    writeLog(`Fetching metadata for ${i + 1} of ${games.length} games`);
-
     game = games[i];
     existingGame = metadataOut.find((meta: Metadata) => meta.id === game.appid);
 
@@ -129,7 +128,7 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
           onDeck: onDeck || "",
         });
       } catch (e: any) {
-        console.error(
+        writeLog(
           `Fetching metadata for ${game.name} failed: ${e.message || ""}`
         );
       }
@@ -137,6 +136,8 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
       await delay(250);
     }
   }
+
+  writeLog(`Fetched metadata, writing to file`);
 
   fs.writeFileSync(
     "./metadata.json",
@@ -146,6 +147,8 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
       flag: "w",
     }
   );
+
+  writeLog("Done. Returning metadata to client");
 
   res.send(mergeMetadata(parseSteamGames(games), metadataOut));
 });

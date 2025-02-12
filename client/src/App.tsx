@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Modal from "@mui/material/Modal";
+import Button from "@mui/material/Button";
 import axios from "axios";
 import GameTable from "./components/GameTable";
 import "./App.css";
@@ -101,15 +102,15 @@ const App = () => {
             />
             {!updatingMetadata && (
               <>
-                <button type="button" onClick={() => updateMetadata()}>
+                <Button type="button" onClick={() => updateMetadata()}>
                   Update missing metadata
-                </button>
-                <button type="button" onClick={() => updateMetadata(true)}>
+                </Button>
+                <Button type="button" onClick={() => updateMetadata(true)}>
                   Update ALL metadata
-                </button>
-                <button type="button" onClick={() => showLogs()}>
+                </Button>
+                <Button type="button" onClick={() => showLogs()}>
                   Logs
-                </button>
+                </Button>
               </>
             )}
             {updatingMetadata && " Updating Metadata..."}
