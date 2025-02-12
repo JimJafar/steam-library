@@ -13,6 +13,7 @@ import parseSteamGames from "./utils/parseSteamGames";
 import delay from "./utils/delay";
 import Metadata from "./types/Metadata";
 import shouldBeRefetched from "./utils/shouldBeRefetched";
+import { clearLog, writeLog } from "utils/logging";
 
 dotenv.config();
 
@@ -55,8 +56,10 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
   let game: SteamGame;
   let existingGame: Metadata | undefined;
 
+  clearLog();
+
   for (let i = 0; i < games.length; i++) {
-    console.log(`Fetching metadata for ${i + 1} of ${games.length} games`);
+    writeLog(`Fetching metadata for ${i + 1} of ${games.length} games`);
 
     game = games[i];
     existingGame = metadataOut.find((meta: Metadata) => meta.id === game.appid);
@@ -69,10 +72,16 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
             headers: {
               USER_AGENT:
                 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36",
+              Cookie:
+                "lastagecheckage=1-January-1982; wants_mature_content=1; birthtime=378691201;",
             },
           }
         );
         const $ = load(steamPage.data);
+        if ($("#ageYear").length > 0) {
+          writeLog(`Age gate hit for ${game.name}, skipping.`);
+          continue;
+        }
         const metacriticScore = $("#game_area_metascore > div.score")
           .first()
           ?.text();
@@ -104,8 +113,8 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
             default:
               onDeck = "";
           }
-        } catch (e) {
-          console.log(e);
+        } catch (e: any) {
+          writeLog(`Error parsing onDeck for ${game.name} ${e?.message || ""}`);
         }
 
         metadataOut.push({
@@ -120,7 +129,9 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
           onDeck: onDeck || "",
         });
       } catch (e: any) {
-        console.error(`${game.name} failed: ${e.message}`);
+        console.error(
+          `Fetching metadata for ${game.name} failed: ${e.message || ""}`
+        );
       }
 
       await delay(250);
@@ -140,7 +151,7 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-  console.log(
+  writeLog(
     `Steam library server listening on port ${port} and allowing connections from ${CORS_ORIGIN}`
   );
 });
