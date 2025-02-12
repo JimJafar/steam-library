@@ -1,7 +1,6 @@
-import Game from "types/Game";
 import Metadata from "types/Metadata";
 
-const shouldBeRefetched = (gameMetadata?: Metadata) => {
+const shouldBeFetched = (gameMetadata?: Metadata) => {
   if (!gameMetadata) {
     return true;
   }
@@ -9,4 +8,4 @@ const shouldBeRefetched = (gameMetadata?: Metadata) => {
   return gameMetadata.steamReviewCount === 0;
 };
 
-export default shouldBeRefetched;
+export default shouldBeFetched;

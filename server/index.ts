@@ -12,7 +12,7 @@ import mergeMetadata from "./utils/mergeMetadata";
 import parseSteamGames from "./utils/parseSteamGames";
 import delay from "./utils/delay";
 import Metadata from "./types/Metadata";
-import shouldBeRefetched from "./utils/shouldBeRefetched";
+import shouldBeFetched from "./utils/shouldBeFetched";
 import { clearLog, writeLog } from "./utils/logging";
 
 dotenv.config();
@@ -63,7 +63,7 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
     game = games[i];
     existingGame = metadataOut.find((meta: Metadata) => meta.id === game.appid);
 
-    if (shouldBeRefetched(existingGame)) {
+    if (shouldBeFetched(existingGame)) {
       try {
         const steamPage = await axios.get(
           `https://store.steampowered.com/app/${game.appid}`,
