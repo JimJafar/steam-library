@@ -3,6 +3,9 @@ node_modules/
 client/node_modules/
 server/node_modules/
 
+# logs
+server/metadata.log
+
 # testing
 client/coverage
 server/coverage
