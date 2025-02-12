@@ -120,6 +120,10 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
           writeLog(`Error parsing onDeck for ${game.name} ${e?.message || ""}`);
         }
 
+        if (existingGame) {
+          writeLog(`Steam score: ${steamScoreParts?.join(" | ")}.`);
+        }
+
         metadataOut.push({
           id: game.appid,
           metacriticUrl: metacriticLink || "",
