@@ -1,6 +1,6 @@
 {
   "name": "steam-library",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A quick and dirty app to list out your Steam library using the Valve API",
   "main": "server/index.ts",
   "scripts": {
