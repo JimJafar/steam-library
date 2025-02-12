@@ -13,7 +13,7 @@ import parseSteamGames from "./utils/parseSteamGames";
 import delay from "./utils/delay";
 import Metadata from "./types/Metadata";
 import shouldBeRefetched from "./utils/shouldBeRefetched";
-import { clearLog, writeLog } from "utils/logging";
+import { clearLog, writeLog } from "./utils/logging";
 
 dotenv.config();
 
