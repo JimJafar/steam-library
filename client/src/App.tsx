@@ -81,7 +81,7 @@ const App = () => {
     const logsResponse = await axios.get(
       `${process.env.REACT_APP_API_URL}/logs`
     );
-    setLogs(logsResponse.data);
+    setLogs(logsResponse.data.logs);
   };
 
   useEffect(() => {
