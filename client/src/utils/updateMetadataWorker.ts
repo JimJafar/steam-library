@@ -7,7 +7,8 @@ onmessage = async function (event) {
   // Perform some computation
   const updateMetadataResponse = await axios.post(
     `${process.env.REACT_APP_API_URL}/update-metadata`,
-    { forceAll }
+    { forceAll },
+    { timeout: 20 * 60 * 1000 }
   );
 
   // Send the result back to the main thread
