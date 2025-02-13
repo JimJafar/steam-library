@@ -66,7 +66,11 @@ const App = () => {
       const updateMetadataResponse = event.data;
       console.log("Received message from the worker:", updateMetadataResponse);
       if (updateMetadataResponse.status === 200) {
-        setFilteredGames([...updateMetadataResponse.data]);
+        const sortedGames = updateMetadataResponse.data.sort(
+          sortFactory(Field.steamScore, true)
+        );
+        setGames(sortedGames);
+        setFilteredGames([...sortedGames]);
         setUpdatingMetadata(false);
         toast.success("Metadata updated successfully");
       } else {
