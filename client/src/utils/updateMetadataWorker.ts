@@ -10,7 +10,8 @@ onmessage = async function (event) {
     { forceAll },
     { timeout: 20 * 60 * 1000 }
   );
+  const { status, data } = updateMetadataResponse;
 
   // Send the result back to the main thread
-  postMessage(updateMetadataResponse);
+  postMessage({ status, data });
 };

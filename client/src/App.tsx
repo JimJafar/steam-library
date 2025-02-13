@@ -12,6 +12,8 @@ import sortFactory from "./utils/sortFactory";
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [updatingMetadata, setUpdatingMetadata] = useState(false);
+  const [showConfirmUpdateAllModal, setShowConfirmUpdateAllModal] =
+    useState(false);
   const [games, setGames] = useState([]);
   const [filteredGames, setFilteredGames] = useState<Game[]>([]);
   const [logs, setLogs] = useState("");
@@ -105,7 +107,10 @@ const App = () => {
                 <Button type="button" onClick={() => updateMetadata()}>
                   Update missing metadata
                 </Button>
-                <Button type="button" onClick={() => updateMetadata(true)}>
+                <Button
+                  type="button"
+                  onClick={() => setShowConfirmUpdateAllModal(true)}
+                >
                   Update ALL metadata
                 </Button>
                 <Button type="button" onClick={() => showLogs()}>
@@ -126,6 +131,31 @@ const App = () => {
             <div className="modal-content">
               <h2>Logs</h2>
               <pre>{logs}</pre>
+            </div>
+          </Modal>
+          <Modal
+            open={showConfirmUpdateAllModal}
+            onClose={() => setShowConfirmUpdateAllModal(false)}
+            aria-labelledby="confirm-update-all"
+            aria-describedby="confirm-update-all"
+          >
+            <div className="modal-content">
+              <h2>Are you sure you want to update all metadata?</h2>
+              <Button
+                type="button"
+                onClick={() => {
+                  updateMetadata(true);
+                  setShowConfirmUpdateAllModal(false);
+                }}
+              >
+                Yes
+              </Button>
+              <Button
+                type="button"
+                onClick={() => setShowConfirmUpdateAllModal(false)}
+              >
+                No
+              </Button>
             </div>
           </Modal>
         </>
