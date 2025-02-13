@@ -112,10 +112,17 @@ table th:first-of-type, table td:first-of-type {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 10em auto;
-  padding: 20px;
+  margin: 5em auto;
+  padding: 1.5em;
   border: 1px solid #888;
   width: 80%;
+  height: calc(100vh - 12.5em);
+  overflow-y: auto;
+
+  h2 {
+    margin: 0 0 1em;
+    color: #454d55;
+  }
 }
 
 button {
@@ -124,19 +131,5 @@ button {
   border-radius: 4px !important;
   border-color:lightgray !important;
   margin-left: 1em !important;
-  /* background-image: linear-gradient(#48637c, #31465c);
-  border: 0;
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
-  box-sizing: border-box;
-  color: #fff;
   cursor: pointer;
-  font-family: Montserrat,sans-serif;
-  font-size: .9em;
-  margin: 5px;
-  padding: 10px 15px;
-  text-align: center;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation; */
 }
