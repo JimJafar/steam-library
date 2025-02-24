@@ -1,3 +1,39 @@
 Fetching metadata for 1201 games
+Re-fetching metadata for Star Wars Galaxies.
+Steam score: 0
+Error fetching IGDB metadata for Star Wars Galaxies: Request failed with status code 400
+Re-fetching metadata for Titan Quest.
+Steam score: 0
+Error fetching IGDB metadata for Titan Quest: Request failed with status code 400
+Re-fetching metadata for Galcon Fusion.
+Steam score: 0
+Error fetching IGDB metadata for Galcon Fusion: Request failed with status code 400
+Re-fetching metadata for Eufloria.
+Steam score: 0
+Error fetching IGDB metadata for Eufloria: Request failed with status code 400
+Re-fetching metadata for Spacebase DF-9 Prototype.
+Steam score: 0
+Error fetching IGDB metadata for Spacebase DF-9 Prototype: Request failed with status code 400
+Re-fetching metadata for Carmageddon: Reincarnation.
+Steam score: 0
+Error fetching IGDB metadata for Carmageddon: Reincarnation: Request failed with status code 400
+Re-fetching metadata for Galcon Legends.
+Steam score: 0
+Error fetching IGDB metadata for Galcon Legends: Request failed with status code 400
+Re-fetching metadata for Starbound - Unstable.
+Steam score: 0
+Error fetching IGDB metadata for Starbound - Unstable: Request failed with status code 400
+Re-fetching metadata for Cloud Knights.
+Steam score: 0
+Error fetching IGDB metadata for Cloud Knights: Request failed with status code 400
+Re-fetching metadata for Magicka 2: Spell Balance Beta.
+Steam score: 0
+Error fetching IGDB metadata for Magicka 2: Spell Balance Beta: Request failed with status code 400
+Re-fetching metadata for System Shock: Classic.
+Steam score: 0
+Error fetching IGDB metadata for System Shock: Classic: Request failed with status code 400
+Re-fetching metadata for Domina.
+Steam score: 0
+Error fetching IGDB metadata for Domina: Request failed with status code 400
 Fetched metadata, writing to file
 Done. Returning metadata to client
