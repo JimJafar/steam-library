@@ -17,7 +17,7 @@ export const enrichWithIGDBMetadata = async (
       return metadata;
     }
 
-    const genres = await getGenres(twitchAuth);
+    const genres = await getGenres(game.genres, twitchAuth);
     const timeToBeat = await getTimeToBeat(game.id, twitchAuth);
 
     metadata.igdbScore = game.total_rating;
@@ -84,12 +84,13 @@ export const getTimeToBeat = async (
 };
 
 export const getGenres = async (
+  genreIds: number[],
   twitchAuth: TwitchAuthResponse
 ): Promise<IGDBGenre[]> => {
   try {
     const { data } = await axios.post(
       "https://api.igdb.com/v4/genres",
-      "fields name;",
+      `fields name; where id = (${genreIds.join(",")});`,
       {
         headers: {
           "Client-ID": process.env.TWITCH_CLIENT_ID,
