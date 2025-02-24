@@ -20,7 +20,7 @@ export const enrichWithIGDBMetadata = async (
     const genres = await getGenres(game.genres, twitchAuth);
     const timeToBeat = await getTimeToBeat(game.id, twitchAuth);
 
-    metadata.igdbScore = game.total_rating;
+    metadata.igdbScore = game.total_rating || 0;
     metadata.igdbUrl = game.url;
     metadata.igdbGenres = game.genres.map(
       (genreId) => genres.find((genre) => genre.id === genreId)?.name || ""
