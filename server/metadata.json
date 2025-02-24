@@ -1104,7 +1104,14 @@
     "steamScore": 0,
     "steamReviewCount": 0,
     "onMac": false,
-    "onDeck": ""
+    "onDeck": "",
+    "igdbScore": 79.31672631859158,
+    "igdbUrl": "https://www.igdb.com/games/titan-quest",
+    "igdbGenres": [
+      "Role-playing (RPG)",
+      ""
+    ],
+    "igdbTimeToBeat": []
   },
   {
     "id": 475150,
@@ -1212,7 +1219,15 @@
     "steamScore": 0,
     "steamReviewCount": 0,
     "onMac": false,
-    "onDeck": ""
+    "onDeck": "",
+    "igdbScore": 60,
+    "igdbUrl": "https://www.igdb.com/games/galcon-fusion",
+    "igdbGenres": [
+      "Real Time Strategy (RTS)",
+      "",
+      ""
+    ],
+    "igdbTimeToBeat": []
   },
   {
     "id": 41210,
@@ -1221,7 +1236,15 @@
     "steamScore": 0,
     "steamReviewCount": 0,
     "onMac": false,
-    "onDeck": ""
+    "onDeck": "",
+    "igdbScore": 74.18812088003324,
+    "igdbUrl": "https://www.igdb.com/games/eufloria",
+    "igdbGenres": [
+      "Real Time Strategy (RTS)",
+      "",
+      ""
+    ],
+    "igdbTimeToBeat": []
   },
   {
     "id": 221180,
@@ -2976,7 +2999,13 @@
     "steamScore": 0,
     "steamReviewCount": 0,
     "onMac": false,
-    "onDeck": ""
+    "onDeck": "",
+    "igdbScore": 49.94525806846134,
+    "igdbUrl": "https://www.igdb.com/games/carmageddon-reincarnation",
+    "igdbGenres": [
+      "Racing"
+    ],
+    "igdbTimeToBeat": []
   },
   {
     "id": 505170,
@@ -3255,7 +3284,14 @@
     "steamScore": 0,
     "steamReviewCount": 0,
     "onMac": false,
-    "onDeck": ""
+    "onDeck": "",
+    "igdbUrl": "https://www.igdb.com/games/galcon-legends",
+    "igdbGenres": [
+      "Real Time Strategy (RTS)",
+      "",
+      ""
+    ],
+    "igdbTimeToBeat": []
   },
   {
     "id": 211820,
@@ -4209,7 +4245,12 @@
     "steamScore": 0,
     "steamReviewCount": 0,
     "onMac": false,
-    "onDeck": ""
+    "onDeck": "",
+    "igdbUrl": "https://www.igdb.com/games/cloud-knights",
+    "igdbGenres": [
+      ""
+    ],
+    "igdbTimeToBeat": []
   },
   {
     "id": 362890,
@@ -5235,7 +5276,22 @@
     "steamScore": 0,
     "steamReviewCount": 0,
     "onMac": false,
-    "onDeck": ""
+    "onDeck": "",
+    "igdbScore": 68.96617657360152,
+    "igdbUrl": "https://www.igdb.com/games/domina",
+    "igdbGenres": [
+      "Simulator",
+      "",
+      ""
+    ],
+    "igdbTimeToBeat": [
+      {
+        "id": 1013,
+        "hastily": 9000,
+        "normally": 10800,
+        "completely": 18000
+      }
+    ]
   },
   {
     "id": 535850,
