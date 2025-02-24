@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import nocache from "nocache";
 import bodyParser from "body-parser";
 import express from "express";
 import cors from "cors";
@@ -25,6 +26,7 @@ const app = express();
 const port = 3042;
 const { CORS_ORIGIN } = process.env;
 
+app.use(nocache());
 app.use(
   cors({
     origin: CORS_ORIGIN,
