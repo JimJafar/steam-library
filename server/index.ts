@@ -1,29 +1,28 @@
 import { Request, Response } from "express";
 import bodyParser from "body-parser";
-import { decode } from "html-entities";
-import { load } from "cheerio";
 import express from "express";
 import cors from "cors";
-import axios from "axios";
 import dotenv from "dotenv";
-import fs from "fs";
 import SteamGame from "./types/SteamGame";
 import mergeMetadata from "./utils/mergeMetadata";
 import parseSteamGames from "./utils/parseSteamGames";
 import delay from "./utils/delay";
 import Metadata from "./types/Metadata";
 import shouldBeFetched from "./utils/shouldBeFetched";
-import { clearLog, writeLog } from "./utils/logging";
+import { clearLog, getLogs, writeLog } from "./utils/logging";
+import scrapeSteam from "utils/scrapeSteam";
+import checkEnv from "utils/checkEnv";
+import { getSteamLibrary } from "utils/steam";
+import { getMetadataStore, writeMetadataStore } from "utils/metadataStore";
+import { enrichWithIGDBMetadata } from "utils/igdb";
 
 dotenv.config();
 
+checkEnv();
+
 const app = express();
 const port = 3042;
-const { STEAM_ID, STEAM_API_KEY, CORS_ORIGIN } = process.env;
-
-if (!STEAM_ID || !STEAM_API_KEY || !CORS_ORIGIN) {
-  throw Error("Please set up your .env files as described in the README.");
-}
+const { CORS_ORIGIN } = process.env;
 
 app.use(
   cors({
@@ -36,23 +35,14 @@ app.use(bodyParser.json());
 
 app.get("/library", async (req: Request, res: Response) => {
   // need to explicitly read the JSON file instead of importing it because there is no way to invalidate the import cache
-  const metadata = JSON.parse(fs.readFileSync("./metadata.json", "utf8"));
-  const response = await axios.get(
-    `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true`
-  );
-  res.send(
-    mergeMetadata(parseSteamGames(response.data.response.games), metadata)
-  );
+  const metadata = getMetadataStore();
+  const games: SteamGame[] = await getSteamLibrary();
+  res.send(mergeMetadata(parseSteamGames(games), metadata));
 });
 
 app.post("/update-metadata", async (req: Request, res: Response) => {
-  const gamesResponse = await axios.get(
-    `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true`
-  );
-  const games: SteamGame[] = gamesResponse.data.response.games;
-  const metadataOut: Metadata[] = req.body.forceAll
-    ? []
-    : JSON.parse(fs.readFileSync("./metadata.json", "utf8"));
+  const games: SteamGame[] = await getSteamLibrary();
+  const metadataOut: Metadata[] = req.body.forceAll ? [] : getMetadataStore();
   let game: SteamGame;
   let existingGame: Metadata | undefined;
 
@@ -68,73 +58,13 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
         writeLog(`Re-fetching metadata for ${game.name}.`);
       }
       try {
-        const steamPage = await axios.get(
-          `https://store.steampowered.com/app/${game.appid}`,
-          {
-            headers: {
-              USER_AGENT:
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36",
-              Cookie:
-                "lastagecheckage=1-January-1982; wants_mature_content=1; birthtime=378691201;",
-            },
-            withCredentials: true,
-          }
-        );
-        const $ = load(steamPage.data);
-        if ($("#ageYear").length > 0) {
-          writeLog(`Age gate hit for ${game.name}, skipping.`);
-          continue;
-        }
-        const metacriticScore = $("#game_area_metascore > div.score")
-          .first()
-          ?.text();
-        const metacriticLink = $("#game_area_metalink > a")
-          .first()
-          ?.attr("href");
-        const steamScoreParts = $(
-          "#review_histogram_rollup_section .game_review_summary"
-        )
-          .attr("data-tooltip-html")
-          ?.split(" user")[0]
-          ?.split("% of the ");
-        const onMac: boolean =
-          $("div.game_area_purchase_platform span.platform_img.mac").length > 0;
-        let onDeck = $("div#application_config")
-          .first()
-          .attr("data-deckcompatibility");
-
-        try {
-          switch (JSON.parse(decode(onDeck || "") || "{}").resolved_category) {
-            case 1:
-              onDeck = "Unsupported";
-            case 2:
-              onDeck = "Playable";
-              break;
-            case 3:
-              onDeck = "Verified";
-              break;
-            default:
-              onDeck = "";
-          }
-        } catch (e: any) {
-          writeLog(`Error parsing onDeck for ${game.name} ${e?.message || ""}`);
-        }
+        let newMetadata: Metadata = await scrapeSteam(game);
 
         if (existingGame) {
-          writeLog(`Steam score: ${steamScoreParts?.join(" | ")}.`);
+          writeLog(`Steam score: ${newMetadata.steamScore}`);
         }
 
-        const newMetadata: Metadata = {
-          id: game.appid,
-          metacriticUrl: metacriticLink || "",
-          metacriticScore: parseInt(metacriticScore) || 0,
-          steamScore: steamScoreParts ? parseInt(steamScoreParts[0], 10) : 0,
-          steamReviewCount: steamScoreParts
-            ? parseInt(steamScoreParts[1].replace(",", ""), 10)
-            : 0,
-          onMac,
-          onDeck: onDeck || "",
-        };
+        newMetadata = await enrichWithIGDBMetadata(game.name, newMetadata);
 
         if (existingGame) {
           metadataOut[metadataOut.indexOf(existingGame)] = newMetadata;
@@ -153,14 +83,7 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
 
   writeLog(`Fetched metadata, writing to file`);
 
-  fs.writeFileSync(
-    "./metadata.json",
-    JSON.stringify(metadataOut, undefined, 2),
-    {
-      encoding: "utf8",
-      flag: "w",
-    }
-  );
+  writeMetadataStore(metadataOut);
 
   writeLog("Done. Returning metadata to client");
 
@@ -169,7 +92,7 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
 
 app.get("/logs", async (req: Request, res: Response) => {
   // need to explicitly read the JSON file instead of importing it because there is no way to invalidate the import cache
-  const logs = fs.readFileSync("./metadata.log", "utf8");
+  const logs = getLogs();
   res.send({ logs });
 });
 

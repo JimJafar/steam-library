@@ -13,3 +13,7 @@ export const writeLog = (msg: string) => {
     flag: "a",
   });
 };
+
+export const getLogs = (): string => {
+  return fs.readFileSync("./metadata.log", "utf8");
+};

@@ -26,6 +26,8 @@ const App = () => {
         Field.lastPlayed,
         Field.metacriticScore,
         Field.steamScore,
+        Field.igdbScore,
+        Field.igdbTimeToBeat,
       ].includes(field)
     );
     setGames([...games].sort(compare));

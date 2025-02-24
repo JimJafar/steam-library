@@ -1,12 +1,15 @@
 enum Field {
-  id = 'id',
-  name = 'name',
-  playtime = 'playtime',
-  lastPlayed = 'lastPlayed',
-  metacriticScore = 'metacriticScore',
-  steamScore = 'steamScore',
-  onMac = 'onMac',
-  onDeck = 'onDeck',
+  id = "id",
+  igdbGenres = "igdbGenres",
+  igdbScore = "igdbScore",
+  igdbTimeToBeat = "igdbTimeToBeat",
+  lastPlayed = "lastPlayed",
+  metacriticScore = "metacriticScore",
+  name = "name",
+  onDeck = "onDeck",
+  onMac = "onMac",
+  playtime = "playtime",
+  steamScore = "steamScore",
 }
 
-export default Field
+export default Field;
