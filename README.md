@@ -32,3 +32,7 @@ The server will be running on port `3042` and the UI will be on `3000`.
 
 The server will be running on port `3042` and the UI will be on `5142`.
 Use your webserver of choice to proxy requests to the correct ports for your (sub)domains.
+
+# TODO:
+
+- [ ] IGDB API: https://api-docs.igdb.com/#game / https://api-docs.igdb.com/#game-time-to-beat
