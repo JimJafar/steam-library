@@ -40,11 +40,11 @@ export const enrichWithIGDBMetadata = async (
 export const getGame = async (
   gameName: string,
   twitchAuth: TwitchAuthResponse
-): Promise<IGDBGame> => {
+): Promise<IGDBGame | undefined> => {
   try {
     const { data } = await axios.post(
       "https://api.igdb.com/v4/games",
-      `where name = "${gameName}"; fields total_rating,genres,url;`,
+      `where name = "${gameName}"; fields total_rating,genres,url; sort id asc;`,
       {
         headers: {
           "Client-ID": process.env.TWITCH_CLIENT_ID,
@@ -53,7 +53,7 @@ export const getGame = async (
       }
     );
 
-    return data as IGDBGame;
+    return data.length > 0 ? (data[0] as IGDBGame) : undefined;
   } catch (e: any) {
     writeLog(`Error fetching IGDB game: ${e.message || ""}`);
     throw e;
