@@ -2,15 +2,14 @@ import axios from "axios";
 import { IGDBGame, IGDBGenre, IGDBTimeToBeat } from "types/IGDB";
 import Metadata from "types/Metadata";
 import { TwitchAuthResponse } from "types/Twitch";
-import { doTwitchAuth } from "./twitch";
 import { writeLog } from "./logging";
 
 export const enrichWithIGDBMetadata = async (
   gameName: string,
-  metadata: Metadata
+  metadata: Metadata,
+  twitchAuth: TwitchAuthResponse
 ): Promise<Metadata> => {
   try {
-    const twitchAuth = await doTwitchAuth();
     const game = await getGame(gameName, twitchAuth);
 
     if (!game) {

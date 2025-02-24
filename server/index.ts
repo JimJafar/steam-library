@@ -15,6 +15,7 @@ import checkEnv from "./utils/checkEnv";
 import { getSteamLibrary } from "./utils/steam";
 import { getMetadataStore, writeMetadataStore } from "./utils/metadataStore";
 import { enrichWithIGDBMetadata } from "./utils/igdb";
+import { doTwitchAuth } from "utils/twitch";
 
 dotenv.config();
 
@@ -42,6 +43,7 @@ app.get("/library", async (req: Request, res: Response) => {
 
 app.post("/update-metadata", async (req: Request, res: Response) => {
   const games: SteamGame[] = await getSteamLibrary();
+  const twitchAuth = await doTwitchAuth();
   const metadataOut: Metadata[] = req.body.forceAll ? [] : getMetadataStore();
   let game: SteamGame;
   let existingGame: Metadata | undefined;
@@ -64,7 +66,11 @@ app.post("/update-metadata", async (req: Request, res: Response) => {
           writeLog(`Steam score: ${newMetadata.steamScore}`);
         }
 
-        newMetadata = await enrichWithIGDBMetadata(game.name, newMetadata);
+        newMetadata = await enrichWithIGDBMetadata(
+          game.name,
+          newMetadata,
+          twitchAuth
+        );
 
         if (existingGame) {
           metadataOut[metadataOut.indexOf(existingGame)] = newMetadata;
