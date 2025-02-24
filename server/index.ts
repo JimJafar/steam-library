@@ -10,11 +10,11 @@ import delay from "./utils/delay";
 import Metadata from "./types/Metadata";
 import shouldBeFetched from "./utils/shouldBeFetched";
 import { clearLog, getLogs, writeLog } from "./utils/logging";
-import scrapeSteam from "utils/scrapeSteam";
-import checkEnv from "utils/checkEnv";
-import { getSteamLibrary } from "utils/steam";
-import { getMetadataStore, writeMetadataStore } from "utils/metadataStore";
-import { enrichWithIGDBMetadata } from "utils/igdb";
+import scrapeSteam from "./utils/scrapeSteam";
+import checkEnv from "./utils/checkEnv";
+import { getSteamLibrary } from "./utils/steam";
+import { getMetadataStore, writeMetadataStore } from "./utils/metadataStore";
+import { enrichWithIGDBMetadata } from "./utils/igdb";
 
 dotenv.config();
 
