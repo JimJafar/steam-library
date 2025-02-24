@@ -1109,7 +1109,7 @@
     "igdbUrl": "https://www.igdb.com/games/titan-quest",
     "igdbGenres": [
       "Role-playing (RPG)",
-      ""
+      "Hack and slash/Beat 'em up"
     ],
     "igdbTimeToBeat": []
   },
@@ -1224,8 +1224,8 @@
     "igdbUrl": "https://www.igdb.com/games/galcon-fusion",
     "igdbGenres": [
       "Real Time Strategy (RTS)",
-      "",
-      ""
+      "Strategy",
+      "Indie"
     ],
     "igdbTimeToBeat": []
   },
@@ -1241,8 +1241,8 @@
     "igdbUrl": "https://www.igdb.com/games/eufloria",
     "igdbGenres": [
       "Real Time Strategy (RTS)",
-      "",
-      ""
+      "Strategy",
+      "Indie"
     ],
     "igdbTimeToBeat": []
   },
@@ -3288,8 +3288,8 @@
     "igdbUrl": "https://www.igdb.com/games/galcon-legends",
     "igdbGenres": [
       "Real Time Strategy (RTS)",
-      "",
-      ""
+      "Strategy",
+      "Indie"
     ],
     "igdbTimeToBeat": []
   },
@@ -4248,7 +4248,7 @@
     "onDeck": "",
     "igdbUrl": "https://www.igdb.com/games/cloud-knights",
     "igdbGenres": [
-      ""
+      "Arcade"
     ],
     "igdbTimeToBeat": []
   },
@@ -5281,8 +5281,8 @@
     "igdbUrl": "https://www.igdb.com/games/domina",
     "igdbGenres": [
       "Simulator",
-      "",
-      ""
+      "Strategy",
+      "Indie"
     ],
     "igdbTimeToBeat": [
       {
