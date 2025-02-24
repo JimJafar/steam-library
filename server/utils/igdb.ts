@@ -41,51 +41,66 @@ export const getGame = async (
   gameName: string,
   twitchAuth: TwitchAuthResponse
 ): Promise<IGDBGame> => {
-  const { data } = await axios.post(
-    "https://api.igdb.com/v4/games",
-    `where name = "${gameName}"; fields total_rating,genres,url;`,
-    {
-      headers: {
-        "Client-ID": process.env.TWITCH_CLIENT_ID,
-        Authorization: `Bearer ${twitchAuth.access_token}`,
-      },
-    }
-  );
+  try {
+    const { data } = await axios.post(
+      "https://api.igdb.com/v4/games",
+      `where name = "${gameName}"; fields total_rating,genres,url;`,
+      {
+        headers: {
+          "Client-ID": process.env.TWITCH_CLIENT_ID,
+          Authorization: `Bearer ${twitchAuth.access_token}`,
+        },
+      }
+    );
 
-  return data as IGDBGame;
+    return data as IGDBGame;
+  } catch (e: any) {
+    writeLog(`Error fetching IGDB game: ${e.message || ""}`);
+    throw e;
+  }
 };
 
 export const getTimeToBeat = async (
   gameId: number,
   twitchAuth: TwitchAuthResponse
 ): Promise<IGDBTimeToBeat> => {
-  const { data } = await axios.post(
-    "https://api.igdb.com/v4/game_time_to_beats",
-    `fields normally,hastily,completely;where game_id = ${gameId};`,
-    {
-      headers: {
-        "Client-ID": process.env.TWITCH_CLIENT_ID,
-        Authorization: `Bearer ${twitchAuth.access_token}`,
-      },
-    }
-  );
+  try {
+    const { data } = await axios.post(
+      "https://api.igdb.com/v4/game_time_to_beats",
+      `fields normally,hastily,completely;where game_id = ${gameId};`,
+      {
+        headers: {
+          "Client-ID": process.env.TWITCH_CLIENT_ID,
+          Authorization: `Bearer ${twitchAuth.access_token}`,
+        },
+      }
+    );
 
-  return data as IGDBTimeToBeat;
+    return data as IGDBTimeToBeat;
+  } catch (e: any) {
+    writeLog(`Error fetching IGDB time to beat: ${e.message || ""}`);
+    throw e;
+  }
 };
 
 export const getGenres = async (
   twitchAuth: TwitchAuthResponse
 ): Promise<IGDBGenre[]> => {
-  const { data } = await axios.post(
-    "https://api.igdb.com/v4/genres",
-    "fields name;",
-    {
-      headers: {
-        "Client-ID": process.env.TWITCH_CLIENT_ID,
-        Authorization: `Bearer ${twitchAuth.access_token}`,
-      },
-    }
-  );
+  try {
+    const { data } = await axios.post(
+      "https://api.igdb.com/v4/genres",
+      "fields name;",
+      {
+        headers: {
+          "Client-ID": process.env.TWITCH_CLIENT_ID,
+          Authorization: `Bearer ${twitchAuth.access_token}`,
+        },
+      }
+    );
 
-  return data as IGDBGenre[];
+    return data as IGDBGenre[];
+  } catch (e: any) {
+    writeLog(`Error fetching IGDB genres: ${e.message || ""}`);
+    throw e;
+  }
 };
