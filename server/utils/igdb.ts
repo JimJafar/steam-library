@@ -25,7 +25,7 @@ export const enrichWithIGDBMetadata = async (
     metadata.igdbGenres = game.genres.map(
       (genreId) => genres.find((genre) => genre.id === genreId)?.name || ""
     );
-    metadata.igdbTimeToBeat = timeToBeat;
+    timeToBeat && (metadata.igdbTimeToBeat = timeToBeat);
 
     writeLog(`Fetched IGDB metadata for ${gameName}`);
   } catch (e: any) {
@@ -63,7 +63,7 @@ export const getGame = async (
 export const getTimeToBeat = async (
   gameId: number,
   twitchAuth: TwitchAuthResponse
-): Promise<IGDBTimeToBeat> => {
+): Promise<IGDBTimeToBeat | undefined> => {
   try {
     const { data } = await axios.post(
       "https://api.igdb.com/v4/game_time_to_beats",
@@ -76,7 +76,7 @@ export const getTimeToBeat = async (
       }
     );
 
-    return data as IGDBTimeToBeat;
+    return (data || []).length > 0 ? (data[0] as IGDBTimeToBeat) : undefined;
   } catch (e: any) {
     writeLog(`Error fetching IGDB time to beat: ${e.message || ""}`);
     throw e;
