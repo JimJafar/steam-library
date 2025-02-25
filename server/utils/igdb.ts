@@ -1,7 +1,7 @@
 import axios from "axios";
-import { IGDBGame, IGDBGenre, IGDBTimeToBeat } from "types/IGDB";
-import Metadata from "types/Metadata";
-import { TwitchAuthResponse } from "types/Twitch";
+import { IGDBGame, IGDBGenre, IGDBTimeToBeat } from "../types/IGDB";
+import Metadata from "../types/Metadata";
+import { TwitchAuthResponse } from "../types/Twitch";
 import { writeLog } from "./logging";
 
 export const enrichWithIGDBMetadata = async (

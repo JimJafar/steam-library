@@ -1,9 +1,9 @@
 import axios from "axios";
-import Metadata from "types/Metadata";
 import { decode } from "html-entities";
 import { load } from "cheerio";
+import Metadata from "../types/Metadata";
 import { writeLog } from "./logging";
-import SteamGame from "types/SteamGame";
+import SteamGame from "../types/SteamGame";
 
 const scrapeSteam = async (game: SteamGame): Promise<Metadata> => {
   const steamPage = await axios.get(
