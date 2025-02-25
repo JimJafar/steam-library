@@ -1110,8 +1110,7 @@
     "igdbGenres": [
       "Role-playing (RPG)",
       "Hack and slash/Beat 'em up"
-    ],
-    "igdbTimeToBeat": []
+    ]
   },
   {
     "id": 475150,
@@ -1226,8 +1225,7 @@
       "Real Time Strategy (RTS)",
       "Strategy",
       "Indie"
-    ],
-    "igdbTimeToBeat": []
+    ]
   },
   {
     "id": 41210,
@@ -1243,8 +1241,7 @@
       "Real Time Strategy (RTS)",
       "Strategy",
       "Indie"
-    ],
-    "igdbTimeToBeat": []
+    ]
   },
   {
     "id": 221180,
@@ -3004,8 +3001,7 @@
     "igdbUrl": "https://www.igdb.com/games/carmageddon-reincarnation",
     "igdbGenres": [
       "Racing"
-    ],
-    "igdbTimeToBeat": []
+    ]
   },
   {
     "id": 505170,
@@ -3285,13 +3281,13 @@
     "steamReviewCount": 0,
     "onMac": false,
     "onDeck": "",
+    "igdbScore": 0,
     "igdbUrl": "https://www.igdb.com/games/galcon-legends",
     "igdbGenres": [
       "Real Time Strategy (RTS)",
       "Strategy",
       "Indie"
-    ],
-    "igdbTimeToBeat": []
+    ]
   },
   {
     "id": 211820,
@@ -4246,11 +4242,11 @@
     "steamReviewCount": 0,
     "onMac": false,
     "onDeck": "",
+    "igdbScore": 0,
     "igdbUrl": "https://www.igdb.com/games/cloud-knights",
     "igdbGenres": [
       "Arcade"
-    ],
-    "igdbTimeToBeat": []
+    ]
   },
   {
     "id": 362890,
@@ -5284,14 +5280,12 @@
       "Strategy",
       "Indie"
     ],
-    "igdbTimeToBeat": [
-      {
-        "id": 1013,
-        "hastily": 9000,
-        "normally": 10800,
-        "completely": 18000
-      }
-    ]
+    "igdbTimeToBeat": {
+      "id": 1013,
+      "hastily": 9000,
+      "normally": 10800,
+      "completely": 18000
+    }
   },
   {
     "id": 535850,
