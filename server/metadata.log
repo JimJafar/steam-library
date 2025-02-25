@@ -37,3 +37,4 @@ Steam score: 0
 Fetched IGDB metadata for Domina
 Fetched metadata, writing to file
 Done. Returning metadata to client
+Steam library server listening on port 3042 and allowing connections from http://ssd-nodes.akita-betelgeuse.ts.net:5142
