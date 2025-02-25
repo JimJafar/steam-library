@@ -15,7 +15,7 @@ import scrapeSteam from "./utils/scrapeSteam";
 import checkEnv from "./utils/checkEnv";
 import { getSteamLibrary } from "./utils/steam";
 import { getMetadataStore, writeMetadataStore } from "./utils/metadataStore";
-import { enrichWithIGDBMetadata } from "./utils/igdb";
+import { enrichWithIGDBMetadata, searchGame } from "./utils/igdb";
 import { doTwitchAuth } from "./utils/twitch";
 
 dotenv.config();
@@ -102,6 +102,21 @@ app.get("/logs", async (req: Request, res: Response) => {
   // need to explicitly read the JSON file instead of importing it because there is no way to invalidate the import cache
   const logs = getLogs();
   res.send({ logs });
+});
+
+app.post("/search-igdb", async (req: Request, res: Response) => {
+  const twitchAuth = await doTwitchAuth();
+  const { name } = req.body;
+  res.send(await searchGame(name, twitchAuth));
+});
+
+app.post("/update-game", async (req: Request, res: Response) => {
+  const game: Metadata = req.body.game;
+  const metadata = getMetadataStore();
+  const index = metadata.findIndex((meta) => meta.id === game.id);
+  metadata[index] = game;
+  writeMetadataStore(metadata);
+  res.send({ status: 200, data: {} });
 });
 
 app.listen(port, () => {

@@ -57,7 +57,7 @@ table tbody th, table tbody td {
 }
 
 table th:first-of-type, table td:first-of-type {
-  width: 1rem;
+  width: 2.2rem;
   padding: 0.4rem 0 0 0.4rem;
 }
 

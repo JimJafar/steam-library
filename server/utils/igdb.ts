@@ -1,5 +1,10 @@
 import axios from "axios";
-import { IGDBGame, IGDBGenre, IGDBTimeToBeat } from "../types/IGDB";
+import {
+  IGDBGame,
+  IGDBGameSearchResults,
+  IGDBGenre,
+  IGDBTimeToBeat,
+} from "../types/IGDB";
 import Metadata from "../types/Metadata";
 import { TwitchAuthResponse } from "../types/Twitch";
 import { writeLog } from "./logging";
@@ -17,7 +22,7 @@ export const enrichWithIGDBMetadata = async (
       return metadata;
     }
 
-    const genres = await getGenres(game.genres, twitchAuth);
+    const genres = await getGenres(game.genres as number[], twitchAuth);
     const timeToBeat = await getTimeToBeat(game.id, twitchAuth);
 
     metadata.igdbScore = game.total_rating || 0;
@@ -56,6 +61,37 @@ export const getGame = async (
     return data.length > 0 ? (data[0] as IGDBGame) : undefined;
   } catch (e: any) {
     writeLog(`Error fetching IGDB game: ${e.message || ""}`);
+    throw e;
+  }
+};
+
+export const searchGame = async (
+  gameName: string,
+  twitchAuth: TwitchAuthResponse
+): Promise<IGDBGameSearchResults> => {
+  try {
+    const { data } = await axios.post(
+      "https://api.igdb.com/v4/games",
+      `search "${gameName}"; fields total_rating,genres,url,name,summary;`,
+      {
+        headers: {
+          "Client-ID": process.env.TWITCH_CLIENT_ID,
+          Authorization: `Bearer ${twitchAuth.access_token}`,
+        },
+      }
+    );
+
+    for (const game of data) {
+      const genres = await getGenres(game.genres as number[], twitchAuth);
+      game.genres = (game.genres || []).map(
+        (genreId: number) =>
+          genres.find((genre) => genre.id === genreId)?.name || ""
+      );
+    }
+
+    return data as IGDBGameSearchResults;
+  } catch (e: any) {
+    writeLog(`Error searching IGDB for "${gameName}": ${e.message || ""}`);
     throw e;
   }
 };

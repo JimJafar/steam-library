@@ -8,15 +8,17 @@ import "./App.css";
 import Field from "./types/Field";
 import Game from "./types/Game";
 import sortFactory from "./utils/sortFactory";
+import SearchIGDBModal from "./components/SearchIGDBModal";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [updatingMetadata, setUpdatingMetadata] = useState(false);
   const [showConfirmUpdateAllModal, setShowConfirmUpdateAllModal] =
     useState(false);
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState<Game[]>([]);
   const [filteredGames, setFilteredGames] = useState<Game[]>([]);
   const [logs, setLogs] = useState("");
+  const [searchingGame, setSearchingGame] = useState<Game | undefined>();
 
   const onSort = (field: Field) => {
     const compare = sortFactory(
@@ -126,7 +128,11 @@ const App = () => {
             )}
             {updatingMetadata && " Updating Metadata..."}
           </p>
-          <GameTable games={filteredGames} onSort={onSort} />
+          <GameTable
+            games={filteredGames}
+            onSort={onSort}
+            onSearchGame={setSearchingGame}
+          />
           <ToastContainer aria-label="toasts" />
           <Modal
             open={logs.length > 0}
@@ -164,6 +170,14 @@ const App = () => {
               </Button>
             </div>
           </Modal>
+          <SearchIGDBModal
+            game={searchingGame}
+            onClose={() => setSearchingGame(undefined)}
+            onUpdated={async () => {
+              setSearchingGame(undefined);
+              fetchGames();
+            }}
+          />
         </>
       )}
     </>

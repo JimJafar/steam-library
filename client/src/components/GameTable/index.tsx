@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import { Button } from "@mui/material";
+import { Search } from "@mui/icons-material";
 import Field from "../../types/Field";
 import Game from "../../types/Game";
 import formatLastPlayed from "../../utils/formatLastPlayed";
@@ -9,10 +11,11 @@ import secondsToHoursAndMinutes from "../../utils/secondsToHours";
 
 export type GameTableProps = {
   onSort: (field: Field) => void;
+  onSearchGame: (game: Game) => void;
   games: Game[];
 };
 
-const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
+const GameTable: FC<GameTableProps> = ({ onSearchGame, onSort, games }) => {
   return (
     <table>
       <thead>
@@ -35,6 +38,7 @@ const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
           <th>Genres</th>
           <th onClick={() => onSort(Field.onMac)}>Mac</th>
           <th onClick={() => onSort(Field.onDeck)}>Deck</th>
+          <th>Search</th>
         </tr>
       </thead>
       <tbody>
@@ -107,7 +111,15 @@ const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
               )}
             </td>
             <td className="hide-on-mobile">
-              {(game.igdbGenres || []).join(", ")}
+              {(game.igdbGenres || []).length > 0 && game.igdbGenres![0]}
+              {(game.igdbGenres || []).length > 1 && (
+                <span className="with-tooltip">
+                  <strong> +{game.igdbGenres!.length - 1}</strong>
+                  <span className="tooltip">
+                    {game.igdbGenres!.slice(1).join(", ")}
+                  </span>
+                </span>
+              )}
             </td>
             <td>
               {game.onMac && (
@@ -119,6 +131,11 @@ const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
               )}
             </td>
             <td>{game.onDeck && <OnDeckIcon supportLevel={game.onDeck} />}</td>
+            <td className="p-2">
+              <Button onClick={() => onSearchGame(game)}>
+                <Search />
+              </Button>
+            </td>
           </tr>
         ))}
       </tbody>
