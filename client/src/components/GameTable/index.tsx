@@ -78,7 +78,7 @@ const GameTable: FC<GameTableProps> = ({ onSort, games }) => {
             <td>
               {game.igdbUrl ? (
                 <a href={game.igdbUrl} target="_blank" rel="noreferrer">
-                  {game.igdbScore || 0}
+                  {Math.round(game.igdbScore || 0)}
                 </a>
               ) : (
                 ""
