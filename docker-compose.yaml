@@ -3,7 +3,7 @@ services:
   server:
     container_name: "steam-library-server"
     restart: always
-    image: "steam-library:0.1"
+    image: "steam-library:0.1.2"
     working_dir: /home/node/server
     ports:
       - "3042:3042"
@@ -17,7 +17,7 @@ services:
   client:
     container_name: "steam-library-client"
     restart: always
-    image: "steam-library:0.1"
+    image: "steam-library:0.1.2"
     working_dir: /home/node/client
     ports:
       - "5142:5142"

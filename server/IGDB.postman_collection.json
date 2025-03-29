@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "33b6f817-0bba-4070-8a44-e83808e91deb",
+		"name": "IGDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1145225"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://id.twitch.tv/oauth2/token?client_id={{TWITCH_CLIENT_ID}}&client_secret={{TWITCH_CLIENT_SECRET}}&grant_type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"id",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "{{TWITCH_CLIENT_ID}}"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{TWITCH_CLIENT_SECRET}}"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Game",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Client-ID",
+						"value": "{{TWITCH_CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer zmxq0ca6wkx1yiavfk0bvglurvgv05",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "where name = \"Galcon Legends\"; fields total_rating,genres,url;",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.igdb.com/v4/games",
+					"protocol": "https",
+					"host": [
+						"api",
+						"igdb",
+						"com"
+					],
+					"path": [
+						"v4",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Time to beat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Client-ID",
+						"value": "{{TWITCH_CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer zmxq0ca6wkx1yiavfk0bvglurvgv05",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "fields normally,hastily,completely;where game_id = 128;",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.igdb.com/v4/game_time_to_beats",
+					"protocol": "https",
+					"host": [
+						"api",
+						"igdb",
+						"com"
+					],
+					"path": [
+						"v4",
+						"game_time_to_beats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Genres",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Client-ID",
+						"value": "{{TWITCH_CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer zmxq0ca6wkx1yiavfk0bvglurvgv05",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "fields name; where id = (11,15,32);",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.igdb.com/v4/genres",
+					"protocol": "https",
+					"host": [
+						"api",
+						"igdb",
+						"com"
+					],
+					"path": [
+						"v4",
+						"genres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Game types",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Client-ID",
+						"value": "{{TWITCH_CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 8st7u6y3a93fn11oo9hs40g2m7ufvh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "fields type;",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.igdb.com/v4/game_types",
+					"protocol": "https",
+					"host": [
+						"api",
+						"igdb",
+						"com"
+					],
+					"path": [
+						"v4",
+						"game_types"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
